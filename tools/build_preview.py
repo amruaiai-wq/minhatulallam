@@ -1,6 +1,10 @@
 """Build a local preview of the site: the approved prototype with the current JSON embedded.
 
 Usage: python tools/build_preview.py  ->  writes site/preview.html
+
+All volumes (vol*/toc.json + vol*/entries/*.json) are merged into one TOC. Hadith numbers run
+across volumes, so topic slugs (h<first hadith no.>) stay unique. Each bab gets `volume` and
+`kitab` (vol1 babs have no kitab field; they are all كتاب الطهارة).
 """
 import glob
 import json
@@ -10,10 +14,18 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 proto = (ROOT / "design" / "prototype.html").read_text(encoding="utf-8")
 
-toc = json.loads((ROOT / "vol1" / "toc.json").read_text(encoding="utf-8"))
-entries = [json.loads(pathlib.Path(f).read_text(encoding="utf-8"))
-           for f in sorted(glob.glob(str(ROOT / "vol1" / "entries" / "*.json")))]
+babs, entries, last = [], [], 0
+for vdir in sorted(ROOT.glob("vol*"), key=lambda p: int(p.name[3:])):
+    toc = json.loads((vdir / "toc.json").read_text(encoding="utf-8"))
+    for b in toc["babs"]:
+        b.setdefault("kitab", "taharah")
+        b["volume"] = toc["volume"]
+        babs.append(b)
+    last = max(last, toc["hadith_range"][1])
+    entries += [json.loads(pathlib.Path(f).read_text(encoding="utf-8"))
+                for f in glob.glob(str(vdir / "entries" / "*.json"))]
 entries.sort(key=lambda e: e["hadith"][0]["no"])
+toc = {"title_ar": "منحة العلام في شرح بلوغ المرام", "hadith_range": [1, last], "babs": babs}
 
 data = json.dumps({"toc": toc, "entries": entries}, ensure_ascii=False).replace("</", "<\\/")
 pattern = re.compile(r'(<script id="data" type="application/json">)(.*?)(</script>)', re.S)
@@ -27,5 +39,5 @@ if "<meta charset" not in html:
 
 out = ROOT / "site" / "preview.html"
 out.parent.mkdir(exist_ok=True)
-out.write_text(html, encoding="utf-8")
+out.write_text(html, encoding="utf-8", newline="\r\n")
 print(f"{out}  ({len(entries)} topics, hadith {entries[0]['hadith'][0]['no']}-{entries[-1]['hadith'][-1]['no']})")

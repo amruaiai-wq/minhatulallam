@@ -11,8 +11,7 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   the book's own فهرس الموضوعات (pp. 516–520), with a `kitab` field per bab (taharah / hayd / salah).
   Done: باب الغسل part 1: intro + topics 1–10, hadith 108–118, pages 5–46 (`vol2/entries/`).
 - Next: باب الغسل part 2 from «صفة الغسل من الجنابة» (page 47, hadith 119) to the end of the bab
-  (page 69), then باب التيمم. Still open in vol 1: miyah bab intro. `tools/build_preview.py`
-  only reads vol1 so far.
+  (page 69), then باب التيمم. Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
@@ -107,7 +106,7 @@ prototype built from the real JSON. The real site must match its screens, layout
   2-column search results; desktop ≥1100px swaps the bottom tabs for a left side rail (232px)
   and shows the hadith page in two columns (matn + rulings sticky on the left, vocab +
   explanation on the right; quick mode collapses to one column).
-- Local preview: `python tools/build_preview.py` embeds the current JSON into the prototype
+- Local preview: `python tools/build_preview.py` merges all `vol*/` TOCs and entries into the prototype
   → `site/preview.html` (served by the `preview` config in `.claude/launch.json`).
 - Home: green header band with Arabic + Thai title and search box, "continue reading" card
   with progress, kitab grid (2 columns), popular tags.
