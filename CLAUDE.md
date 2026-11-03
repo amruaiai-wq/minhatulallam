@@ -9,13 +9,13 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Done: **Volume 1 complete** (hadith 1–107, all 8 babs; `vol1/entries/h001.json` … `h106-107.json`).
 - Volume 2 (`sources/vol2.pdf`, 520 pages, hadith 108–266; no OCR file): `vol2/toc.json` built from
   the book's own فهرس الموضوعات (pp. 516–520), with a `kitab` field per bab (taharah / hayd / salah).
-  Done: باب الغسل part 1: intro + topics 1–10, hadith 108–118, pages 5–46 (`vol2/entries/`).
-- Next: باب الغسل part 2 from «صفة الغسل من الجنابة» (page 47, hadith 119) to the end of the bab
-  (page 69), then باب التيمم. Still open in vol 1: miyah bab intro.
+  Done: باب الغسل (108–125), باب التيمم part 1: intro + topics 1–5, hadith 126–130, pages 70–87.
+- Next: باب التيمم part 2 from «التيمم رافع للحدث بمنزلة الوضوء» (page 88, hadith 131) to the end
+  of the bab (page 110), then كتاب الحيض. Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
-  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah).
+  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»).
 - Bab intros (author's text before the first topic) go in `toc.json` as `intro_th` on the bab
   (added for aniyah … qada-hajah; miyah not yet done; pending user approval).
 
