@@ -9,10 +9,10 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Done: **Volume 1 complete** (hadith 1–107, all 8 babs; `vol1/entries/h001.json` … `h106-107.json`).
 - Volume 2 (`sources/vol2.pdf`, 520 pages, hadith 108–266; no OCR file): `vol2/toc.json` built from
   the book's own فهرس الموضوعات (pp. 516–520), with a `kitab` field per bab (taharah / hayd / salah).
-  Done: باب الغسل (108–125), باب التيمم (126–137), كتاب الحيض (138–150).
-- Next: كتاب الصلاة (page 165; kitab intro pp. 165–166), then باب المواقيت (page 167, topic
-  «بيان أول الوقت وآخره» page 168, hadith 151). Kitab intros go on the first bab's `intro_th`
-  or (better) the `kitabs` entry in vol2/toc.json. Still open in vol 1: miyah bab intro.
+  Done: باب الغسل (108–125), باب التيمم (126–137), كتاب الحيض (138–150), كتاب الصلاة intro
+  (on the `salah` entry in `kitabs`), باب المواقيت part 1: intro + topics 1–7, hadith 151–162, pages 167–197.
+- Next: باب المواقيت part 2 from «بيان شيء من أوقات النهي عن الصلاة» (page 198, hadith 163) to the
+  end of the bab (page ~235), then باب الأذان. Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
