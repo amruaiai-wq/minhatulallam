@@ -8,16 +8,16 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Volume 1 (كتاب الطهارة, hadith 1–107, 431 pages): `vol1/toc.json` is complete.
 - Done: باب المياه (1–15), باب الآنية (16–23), باب إزالة النجاسة (24–31),
   باب الوضوء (32–57), باب المسح على الخفين (58–66),
-  باب نواقض الوضوء (67–85)
-  (`vol1/entries/h001.json` … `h082-085.json`).
-- Next: باب قضاء الحاجة (page 356): bab intro (pages 356–357) as `intro_th`, then topic 1
-  «كراهة دخول الخلاء بما فيه ذكر الله تعالى» (page 358), continue in TOC order.
+  باب نواقض الوضوء (67–85), باب قضاء الحاجة part 1: intro + topics 1–8, hadith 86–96,
+  pages 356–387 (`vol1/entries/h001.json` … `h096.json`).
+- Next: باب قضاء الحاجة part 2 from topic 9 «بيان حكم استقبال القبلة حال قضاء الحاجة»
+  (page 388, hadith 97) to the end of the bab (~page 420), then continue in TOC order.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
   wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…»).
 - Bab intros (author's text before the first topic) go in `toc.json` as `intro_th` on the bab
-  (added for aniyah and najasah; miyah not yet done; pending user approval).
+  (added for aniyah … qada-hajah; miyah not yet done; pending user approval).
 
 ## Source PDF
 
