@@ -7,8 +7,12 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 
 - Volume 1 (كتاب الطهارة, hadith 1–107, 431 pages): `vol1/toc.json` is complete.
 - Done: **Volume 1 complete** (hadith 1–107, all 8 babs; `vol1/entries/h001.json` … `h106-107.json`).
-- Next: Volume 2 (starts with باب الغسل وحكم الجنب) once its PDF is in `sources/`; still open in
-  vol 1: miyah bab intro.
+- Volume 2 (`sources/vol2.pdf`, 520 pages, hadith 108–266; no OCR file): `vol2/toc.json` built from
+  the book's own فهرس الموضوعات (pp. 516–520), with a `kitab` field per bab (taharah / hayd / salah).
+  Done: باب الغسل part 1: intro + topics 1–10, hadith 108–118, pages 5–46 (`vol2/entries/`).
+- Next: باب الغسل part 2 from «صفة الغسل من الجنابة» (page 47, hadith 119) to the end of the bab
+  (page 69), then باب التيمم. Still open in vol 1: miyah bab intro. `tools/build_preview.py`
+  only reads vol1 so far.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
