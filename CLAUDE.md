@@ -9,9 +9,9 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Done: **Volume 1 complete** (hadith 1–107, all 8 babs; `vol1/entries/h001.json` … `h106-107.json`).
 - Volume 2 (`sources/vol2.pdf`, 520 pages, hadith 108–266; no OCR file): `vol2/toc.json` built from
   the book's own فهرس الموضوعات (pp. 516–520), with a `kitab` field per bab (taharah / hayd / salah).
-  Done: باب الغسل (108–125), باب التيمم part 1: intro + topics 1–5, hadith 126–130, pages 70–87.
-- Next: باب التيمم part 2 from «التيمم رافع للحدث بمنزلة الوضوء» (page 88, hadith 131) to the end
-  of the bab (page 110), then كتاب الحيض. Still open in vol 1: miyah bab intro.
+  Done: باب الغسل (108–125), باب التيمم (126–137).
+- Next: كتاب الحيض (page 111; kitab intro pp. 111–112, then «حكم المستحاضة التي لا عادة لها»,
+  page 113, hadith 138). Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
