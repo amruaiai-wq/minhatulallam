@@ -11,8 +11,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   the book's own فهرس الموضوعات (pp. 516–520), with a `kitab` field per bab (taharah / hayd / salah).
   Done: باب الغسل (108–125), باب التيمم (126–137), كتاب الحيض (138–150), كتاب الصلاة intro
   (on the `salah` entry in `kitabs`), باب المواقيت (complete: intro + all topics, hadith 151–177, pages 167–235),
-  باب الأذان part 1: intro + topics 1–8, hadith 178–188, pages 236–269.
-- Next: باب الأذان part 2 from «حكم الأذان قبل الفجر» (page 270, hadith 189) to the end of the bab (page ~315). Still open in vol 1: miyah bab intro.
+  باب الأذان (complete: intro + all topics, hadith 178–204, pages 236–316).
+- Next: باب شروط الصلاة (page 317, hadith 205 onward). Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
