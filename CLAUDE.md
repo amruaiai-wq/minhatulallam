@@ -12,8 +12,9 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   Done: باب الغسل (108–125), باب التيمم (126–137), كتاب الحيض (138–150), كتاب الصلاة intro
   (on the `salah` entry in `kitabs`), باب المواقيت (complete: intro + all topics, hadith 151–177, pages 167–235),
   باب الأذان (complete: intro + all topics, hadith 178–204, pages 236–316),
-  باب شروط الصلاة (complete: intro + all topics, hadith 205–227, pages 317–394).
-- Next: باب سترة المصلي (page 395: bab intro, then hadith 228 onward). Still open in vol 1: miyah bab intro.
+  باب شروط الصلاة (complete: intro + all topics, hadith 205–227, pages 317–394),
+  باب سترة المصلي (complete: intro + all topics, hadith 228–237, pages 395–428).
+- Next: باب الحث على الخشوع في الصلاة (page 429: bab intro, then hadith 238 onward). Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
