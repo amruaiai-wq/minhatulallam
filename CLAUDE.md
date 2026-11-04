@@ -18,8 +18,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   باب المساجد (complete: intro + all topics, hadith 251–266, pages 464–505). **Volume 2 complete.**
 - Volume 3 (`sources/vol3.pdf`, 511 pages, hadith 267–441, all كتاب الصلاة): `vol3/toc.json` built from the
   book's فهرس الموضوعات (pp. 506–511); babs sifah / sahw / tatawwu / jamaah / musafir.
-  Done: باب صفة الصلاة intro + topics 1–7, hadith 267–278, pages 5–48.
-- Next: باب صفة الصلاة from «حكم قراءة الفاتحة في الصلاة» (page 49, hadith 279). (sources/ now holds vol1–vol10.) Still open in vol 1: miyah bab intro.
+  Done: باب صفة الصلاة intro + topics 1–16, hadith 267–291, pages 5–89.
+- Next: باب صفة الصلاة, from «مشروعية السؤال عند آية الرحمة في صلاة النفل» (page 90, hadith 292). (sources/ now holds vol1–vol10.) Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
