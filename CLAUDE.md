@@ -14,8 +14,9 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   باب الأذان (complete: intro + all topics, hadith 178–204, pages 236–316),
   باب شروط الصلاة (complete: intro + all topics, hadith 205–227, pages 317–394),
   باب سترة المصلي (complete: intro + all topics, hadith 228–237, pages 395–428),
-  باب الحث على الخشوع في الصلاة (complete: intro + all topics, hadith 238–250, pages 429–463).
-- Next: باب المساجد (page 464: bab intro, then hadith 251 onward; last bab of vol 2, hadith to 266). Still open in vol 1: miyah bab intro.
+  باب الحث على الخشوع في الصلاة (complete: intro + all topics, hadith 238–250, pages 429–463),
+  باب المساجد (complete: intro + all topics, hadith 251–266, pages 464–505). **Volume 2 complete.**
+- Next: Volume 3 (starts with باب صفة الصلاة; needs `sources/vol3.pdf` and a `vol3/toc.json`). Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
