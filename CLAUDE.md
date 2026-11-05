@@ -18,8 +18,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   باب المساجد (complete: intro + all topics, hadith 251–266, pages 464–505). **Volume 2 complete.**
 - Volume 3 (`sources/vol3.pdf`, 511 pages, hadith 267–441, all كتاب الصلاة): `vol3/toc.json` built from the
   book's فهرس الموضوعات (pp. 506–511); babs sifah / sahw / tatawwu / jamaah / musafir.
-  Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع intro (pp. 263–264) + topics 1–13 (hadith 350–373, pages 265–310).
-- Next: باب صلاة التطوع, from «حكم من لم يوتر» (page 311, hadith 374). (sources/ now holds vol1–vol10.)
+  Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع intro (pp. 263–264) + topics 1–20 (hadith 350–387, pages 265–333).
+- Next: باب صلاة التطوع, from «حكم قضاء الوتر» (page 334, hadith 388). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
