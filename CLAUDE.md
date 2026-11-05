@@ -23,8 +23,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   فهرس الموضوعات (pp. 527–534). Kitabs salah / janaiz / zakah; babs jumuah, khawf, idayn, kusuf, istisqa,
   libas (salah), janaiz (whole kitab, no babs), zakah (kitab's own topics), fitr, sadaqah, qasm.
   The book's numbering skips 442–444 (صلاة المريض, already explained in vol 3 h328–329), so vol 4 starts at 445.
-  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين intro (p. 109) + topics 1–8 (hadith 485–492, pages 110–127).
-- Next: باب صلاة العيدين, from «جواز التطوع بركعتين بعد الرجوع من المصلّى» (page 128, hadith 493). (sources/ now holds vol1–vol10.)
+  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين (complete: intro + all topics, hadith 485–501, pages 109–147).
+- Next: باب صلاة الكسوف (bab intro from page 148; first topic page 151, hadith 502). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
