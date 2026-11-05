@@ -19,7 +19,12 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Volume 3 (`sources/vol3.pdf`, 511 pages, hadith 267–441, all كتاب الصلاة): `vol3/toc.json` built from the
   book's فهرس الموضوعات (pp. 506–511); babs sifah / sahw / tatawwu / jamaah / musafir.
   Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع (complete: intro + all topics, hadith 350–396, pages 263–350); باب صلاة الجماعة والإمامة (complete: intro + all topics, hadith 397–428, pages 351–449); باب صلاة المسافر والمريض (complete: intro + all topics, hadith 429–441, pages 450–490). **Volume 3 complete.**
-- Next: Volume 4 (`sources/vol4.pdf`), which starts with باب صلاة الجمعة (hadith 442): build `vol4/toc.json` from its فهرس الموضوعات first. (sources/ now holds vol1–vol10.)
+- Volume 4 (`sources/vol4.pdf`, 534 pages, hadith 445–649): `vol4/toc.json` built from the book's
+  فهرس الموضوعات (pp. 527–534). Kitabs salah / janaiz / zakah; babs jumuah, khawf, idayn, kusuf, istisqa,
+  libas (salah), janaiz (whole kitab, no babs), zakah (kitab's own topics), fitr, sadaqah, qasm.
+  The book's numbering skips 442–444 (صلاة المريض, already explained in vol 3 h328–329), so vol 4 starts at 445.
+  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة intro (pp. 5–6) + topics 1–4 (hadith 445–449, pages 7–23).
+- Next: باب صلاة الجمعة, from «مشروعية قيام الخطيب وجلوسه بين الخطبتين» (page 24, hadith 450). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
