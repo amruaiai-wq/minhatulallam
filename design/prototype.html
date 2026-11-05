@@ -183,15 +183,15 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
   var D = JSON.parse(document.getElementById("data").textContent);
   var babs = D.toc.babs, entries = D.entries;
   var babById = {}; babs.forEach(function (b) { babById[b.id] = b; });
-  var KNAME = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์" };
-  var KSHORT = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์" };
+  var KNAME = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์" };
+  var KSHORT = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์" };
   var kitabOf = function (b) { return b.kitab || "taharah"; };
   var volOf = function (e) { return e.volume || 1; };
   var KITABS = [
     { ar: "كتاب الطهارة", th: "ความสะอาด", vol: 1, ids: ["taharah", "hayd"] },
     { ar: "كتاب الصلاة", th: "การละหมาด", ids: ["salah"] },
-    { ar: "كتاب الجنائز", th: "ศพและการจัดการ" },
-    { ar: "كتاب الزكاة", th: "ซะกาต" },
+    { ar: "كتاب الجنائز", th: "ศพและการจัดการ", ids: ["janaiz"] },
+    { ar: "كتاب الزكاة", th: "ซะกาต", ids: ["zakah"] },
     { ar: "كتاب الصيام", th: "การถือศีลอด" },
     { ar: "كتاب الحج", th: "ฮัจญ์" }
   ];
