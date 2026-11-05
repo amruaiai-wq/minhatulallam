@@ -18,12 +18,12 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   باب المساجد (complete: intro + all topics, hadith 251–266, pages 464–505). **Volume 2 complete.**
 - Volume 3 (`sources/vol3.pdf`, 511 pages, hadith 267–441, all كتاب الصلاة): `vol3/toc.json` built from the
   book's فهرس الموضوعات (pp. 506–511); babs sifah / sahw / tatawwu / jamaah / musafir.
-  Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع intro (pp. 263–264).
-- Next: باب صلاة التطوع, from «فضل صلاة التطوع» (page 265, hadith 350). (sources/ now holds vol1–vol10.) Still open in vol 1: miyah bab intro.
+  Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع intro (pp. 263–264) + topics 1–9 (hadith 350–365, pages 265–292).
+- Next: باب صلاة التطوع, from «بيان كيفية صلاة الليل» (page 293, hadith 366). (sources/ now holds vol1–vol10.) Still open in vol 1: miyah bab intro.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
-  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»).
+  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»; vol 3: «ثواب من صلى في اليوم والليلة من النوافل…»).
 - Bab intros (author's text before the first topic) go in `toc.json` as `intro_th` on the bab
   (added for aniyah … qada-hajah; miyah not yet done; pending user approval).
 
