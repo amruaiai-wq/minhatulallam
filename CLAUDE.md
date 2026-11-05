@@ -19,13 +19,13 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Volume 3 (`sources/vol3.pdf`, 511 pages, hadith 267–441, all كتاب الصلاة): `vol3/toc.json` built from the
   book's فهرس الموضوعات (pp. 506–511); babs sifah / sahw / tatawwu / jamaah / musafir.
   Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع intro (pp. 263–264) + topics 1–9 (hadith 350–365, pages 265–292).
-- Next: باب صلاة التطوع, from «بيان كيفية صلاة الليل» (page 293, hadith 366). (sources/ now holds vol1–vol10.) Still open in vol 1: miyah bab intro.
+- Next: باب صلاة التطوع, from «بيان كيفية صلاة الليل» (page 293, hadith 366). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
   wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»; vol 3: «ثواب من صلى في اليوم والليلة من النوافل…»).
 - Bab intros (author's text before the first topic) go in `toc.json` as `intro_th` on the bab
-  (added for aniyah … qada-hajah; miyah not yet done; pending user approval).
+  (all babs so far, incl. miyah; shown on the บทนำ page).
 
 ## Source PDF
 
@@ -124,6 +124,11 @@ prototype built from the real JSON. The real site must match its screens, layout
 - Search: Thai, Arabic (ignore harakat), hadith number; filters ทั้งหมด / ตัวบทอาหรับ /
   ข้อตัดสิน / หัวข้อ; result cards with highlight.
 - TOC: every bab and topic from toc.json; topics not yet summarized shown as รอสรุป.
+- Extra sections (user request, linked from home "หมวดเสริม", not in the tab bar):
+  `#intros` บทนำ — every kitab intro (`kitabs[].intro_th`) and bab intro (`intro_th`), collapsible,
+  deep link `#intro-<vol>-<babid>` (TOC bab cards link to it); `#glossary` อภิธานศัพท์ — all `vocab`
+  merged across entries (deduped by Arabic without harakat), searchable, grouped by first letter,
+  each term linking back to its hadith pages.
 - **Light theme only** (do not auto-switch to dark). Colors:
   green #2E5641 (dark #1F3D2D, soft #EAEDDC), gold #8A5A16 (line #A8752B, soft #FBEFD9),
   ground #F8F2E7, cards #FFFCF6, ink #2A231D, muted #6B5F52, lines #E8DDCB.

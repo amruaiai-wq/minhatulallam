@@ -100,6 +100,21 @@ body.quick .deep { display: none !important; }
 .result .meta b { flex: none; color: var(--gold); }
 mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radius: 3px; }
 .empty { padding: 32px 8px; text-align: center; color: var(--muted); }
+.extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.xcard { display: flex; flex-direction: column; gap: 6px; padding: 14px; color: var(--ink); border-radius: 12px; }
+.xcard b { font-size: 15px; } .xcard span { font-size: 12px; color: var(--muted); }
+.intro { padding: 0; overflow: hidden; scroll-margin-top: 64px; }
+.intro summary { list-style: none; cursor: pointer; }
+.intro summary::-webkit-details-marker { display: none; }
+.intro .body { padding: 4px 16px 16px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.75; border-top: 1px solid var(--line); }
+.intro .body p { margin: 0; }
+.intro-link { display: block; padding: 10px 16px; border-top: 1px solid var(--line); font-size: 14px; font-weight: 600; }
+.letter { font: 700 20px var(--ff-ar, serif); color: var(--gold); margin-top: 8px; }
+.term { padding: 12px 16px; display: flex; flex-direction: column; gap: 6px; }
+.term .ar { font-size: 19px; color: var(--green); font-weight: 700; line-height: 1.6; }
+.term .th { font-size: 15px; line-height: 1.6; }
+.term .src { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; }
+.term .src a { color: var(--gold); font-weight: 600; }
 
 /* toc */
 .bab { display: flex; flex-direction: column; gap: 0; overflow: hidden; }
@@ -180,6 +195,7 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
     { ar: "كتاب الصيام", th: "การถือศีลอด" },
     { ar: "كتاب الحج", th: "ฮัจญ์" }
   ];
+  var kitabIntros = D.toc.kitab_intros || [];
   var TOTAL = D.toc.hadith_range[1];
   KITABS.forEach(function (k) {
     if (!k.ids) return;
@@ -233,6 +249,10 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
           var ready = k.vol ? entries.length : 0;
           return '<a class="card kcard' + (k.vol ? '' : ' off') + '" href="' + (k.vol ? '#toc' : '#home') + '"' + (k.vol ? '' : ' aria-disabled="true" tabindex="-1"') + '><div class="ar">' + k.ar + '</div><div style="font-size:15px;font-weight:600">' + k.th + '</div><div class="muted" style="font-size:12px">' + (k.vol ? 'สรุปแล้ว ' + k.done + (k.total ? ' จาก ' + k.total : '') + ' หะดีษ' : 'เร็ว ๆ นี้') + '</div></a>';
         }).join("")
+      + '</div></section>'
+      + '<section style="display:flex;flex-direction:column;gap:12px"><h2 class="h2">หมวดเสริม</h2><div class="extra-grid">'
+      + '<a class="card xcard" href="#intros"><b>บทนำ</b><span>คำนิยามและบทนำของกิตาบและบาบ (' + (kitabIntros.length + babs.filter(function (b) { return b.intro_th; }).length) + ')</span></a>'
+      + '<a class="card xcard" href="#glossary"><b>อภิธานศัพท์</b><span>คำศัพท์จากทุกหัวข้อ (' + glossary().length + ' คำ)</span></a>'
       + '</div></section>'
       + '<section style="display:flex;flex-direction:column;gap:12px"><h2 class="h2">หัวข้อยอดนิยม</h2><div class="chips">'
       + tagCounts().slice(0, 10).map(function (t) { return '<a class="chip" href="#search">' + esc(t) + '</a>'; }).join("")
@@ -337,9 +357,69 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
           var head = "เล่ม " + (b.volume || 1) + " · " + KNAME[kitabOf(b)], hh = head === lastHead ? "" : '<h2 class="h2" style="margin-top:8px">' + head + '</h2>';
           lastHead = head;
           return hh + '<section class="card bab"><div class="bab-head"><div><div style="font-weight:700">' + esc(b.th) + '</div><div class="muted" style="font-size:12px">สรุปแล้ว ' + n + ' จาก ' + b.topics.length + ' หัวข้อ</div></div><div class="ar" lang="ar">' + esc(b.ar) + '</div></div>'
+            + (b.intro_th ? '<a class="intro-link" href="#intro-' + b.volume + '-' + b.id + '">อ่านบทนำของบาบ ›</a>' : '')
             + b.topics.map(function (t) { var e = have[b.id + ":" + t.page]; return e ? '<a class="topic-link" href="#' + slug(e) + '"><span>' + esc(e.topic_th) + '</span><b>หะดีษที่ ' + label(e) + '</b></a>' : '<span class="topic-link off"><span class="ar" lang="ar" style="text-align:left;direction:rtl">' + esc(t.ar) + '</span><b>รอสรุป</b></span>'; }).join("")
             + '</section>';
         }).join("") + '</div></div>';
+  }
+
+  var glossCache = null;
+  function glossary() {
+    if (glossCache) return glossCache;
+    var map = {};
+    entries.forEach(function (e) {
+      (e.vocab || []).forEach(function (v) {
+        var k = strip(v.ar).replace(/[\sـ]+/g, " ").trim();
+        var g = map[k] || (map[k] = { ar: v.ar, defs: [], src: [] });
+        if (g.defs.indexOf(v.th) < 0) g.defs.push(v.th);
+        if (!g.src.some(function (x) { return x === e; })) g.src.push(e);
+      });
+    });
+    glossCache = Object.keys(map).map(function (k) { map[k].key = k.replace(/^ال/, "").replace(/^[آأإٱ]/, "ا"); return map[k]; })
+      .sort(function (a, b) { return a.key.localeCompare(b.key, "ar"); });
+    return glossCache;
+  }
+  var gq = "";
+  function viewGlossary() {
+    root.innerHTML = '<div class="view"><form class="sbar" id="gf" role="search"><a class="icon-btn" href="#home" aria-label="กลับหน้าแรก">' + ICON.back + '</a>'
+      + '<label class="searchbox">' + ICON.search + '<span style="position:absolute;width:1px;height:1px;overflow:hidden">ค้นหาคำศัพท์</span><input id="gq" type="search" placeholder="ค้นหาคำศัพท์ อาหรับหรือไทย" value="' + esc(gq) + '"></label></form>'
+      + '<div class="pad" style="padding-block:16px;display:flex;flex-direction:column;gap:12px"><div class="row-between"><h2 class="h2">อภิธานศัพท์</h2><span id="gcount" class="muted" style="font-size:13px"></span></div><div id="glist" style="display:flex;flex-direction:column;gap:10px"></div></div></div>';
+    var input = document.getElementById("gq");
+    function run() {
+      gq = input.value.trim();
+      var q = strip(gq.toLowerCase()), last = "";
+      var list = glossary().filter(function (g) { return !q || strip((g.ar + " " + g.defs.join(" ")).toLowerCase()).indexOf(q) >= 0; });
+      document.getElementById("gcount").textContent = list.length + " คำ";
+      document.getElementById("glist").innerHTML = list.length ? list.map(function (g) {
+        var L = g.key.charAt(0), head = L !== last ? '<div class="letter" lang="ar">' + esc(L) + '</div>' : "";
+        last = L;
+        return head + '<div class="card term"><div class="ar" lang="ar">' + esc(g.ar) + '</div>'
+          + g.defs.map(function (d) { return '<div class="th">' + esc(d) + '</div>'; }).join("")
+          + '<div class="src">' + g.src.slice(0, 8).map(function (e) { return '<a href="#' + slug(e) + '">หะดีษที่ ' + label(e) + '</a>'; }).join("") + (g.src.length > 8 ? '<span class="muted">+' + (g.src.length - 8) + '</span>' : '') + '</div></div>';
+      }).join("") : '<div class="empty">ไม่พบคำศัพท์ที่ตรงกับ "' + esc(gq) + '"</div>';
+    }
+    input.addEventListener("input", run);
+    document.getElementById("gf").addEventListener("submit", function (ev) { ev.preventDefault(); input.blur(); });
+    run();
+  }
+
+  function viewIntros(open) {
+    var paras = function (ps) { return '<div class="body">' + ps.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join("") + '</div>'; };
+    var lastHead = "", h = "";
+    kitabIntros.forEach(function (k) {
+      var id = "intro-k-" + k.volume + "-" + k.id;
+      h += '<details class="card intro" id="' + id + '"' + (open === id ? ' open' : '') + '><summary class="bab-head"><div><div style="font-weight:700">บทนำ' + esc(KNAME[k.id] || k.th) + '</div><div class="muted" style="font-size:12px">เล่ม ' + k.volume + '</div></div><div class="ar" lang="ar">' + esc(k.ar) + '</div></summary>' + paras(k.intro_th) + '</details>';
+    });
+    babs.forEach(function (b) {
+      if (!b.intro_th) return;
+      var head = "เล่ม " + (b.volume || 1) + " · " + KNAME[kitabOf(b)];
+      if (head !== lastHead) { h += '<h2 class="h2" style="margin-top:8px">' + head + '</h2>'; lastHead = head; }
+      var id = "intro-" + b.volume + "-" + b.id;
+      h += '<details class="card intro" id="' + id + '"' + (open === id ? ' open' : '') + '><summary class="bab-head"><div><div style="font-weight:700">' + esc(b.th) + '</div><div class="muted" style="font-size:12px">บทนำของบาบ · หน้า ' + b.page + '</div></div><div class="ar" lang="ar">' + esc(b.ar) + '</div></summary>' + paras(b.intro_th) + '</details>';
+    });
+    root.innerHTML = '<div class="view"><div class="topbar"><a class="icon-btn" href="#home" aria-label="กลับหน้าแรก">' + ICON.back + '</a><div class="t"><small>คำนิยามและบทนำของผู้แต่ง</small><b>บทนำ</b></div></div>'
+      + '<div class="pad" style="padding-block:16px;display:flex;flex-direction:column;gap:12px">' + (h || '<div class="empty">ยังไม่มีบทนำ</div>') + '</div></div>';
+    if (open) { var el = document.getElementById(open); if (el) setTimeout(function () { el.scrollIntoView({ block: "start" }); }, 0); }
   }
 
   function viewSaved() {
@@ -358,6 +438,8 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
     else if (h === "search") { viewSearch(); tab = "search"; }
     else if (h === "toc") { viewToc(); tab = "toc"; }
     else if (h === "saved") { viewSaved(); tab = "saved"; }
+    else if (h === "glossary") { viewGlossary(); tab = "home"; }
+    else if (h === "intros" || /^intro-/.test(h)) { viewIntros(h === "intros" ? "" : h); tab = "toc"; }
     else viewHome();
     document.querySelectorAll(".tabbar a").forEach(function (a) { if (a.getAttribute("data-tab") === tab) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
     window.scrollTo(0, 0);
