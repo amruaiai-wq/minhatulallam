@@ -18,8 +18,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   باب المساجد (complete: intro + all topics, hadith 251–266, pages 464–505). **Volume 2 complete.**
 - Volume 3 (`sources/vol3.pdf`, 511 pages, hadith 267–441, all كتاب الصلاة): `vol3/toc.json` built from the
   book's فهرس الموضوعات (pp. 506–511); babs sifah / sahw / tatawwu / jamaah / musafir.
-  Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع (complete: intro + all topics, hadith 350–396, pages 263–350); باب صلاة الجماعة والإمامة (complete: intro + all topics, hadith 397–428, pages 351–449); باب صلاة المسافر والمريض intro (pp. 450–451) + topics 1–6 (hadith 429–437, pages 452–477).
-- Next: باب صلاة المسافر والمريض, from «حكم الجمع بين الظهر والعصر في السفر» (page 478, hadith 438). (sources/ now holds vol1–vol10.)
+  Done: باب صفة الصلاة (complete: intro + all topics, hadith 267–329, pages 5–208); باب سجود السهو (complete: intro + all topics, hadith 330–349, pages 209–262); باب صلاة التطوع (complete: intro + all topics, hadith 350–396, pages 263–350); باب صلاة الجماعة والإمامة (complete: intro + all topics, hadith 397–428, pages 351–449); باب صلاة المسافر والمريض (complete: intro + all topics, hadith 429–441, pages 450–490). **Volume 3 complete.**
+- Next: Volume 4 (`sources/vol4.pdf`), which starts with باب صلاة الجمعة (hadith 442): build `vol4/toc.json` from its فهرس الموضوعات first. (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
