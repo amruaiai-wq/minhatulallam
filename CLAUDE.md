@@ -23,8 +23,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   فهرس الموضوعات (pp. 527–534). Kitabs salah / janaiz / zakah; babs jumuah, khawf, idayn, kusuf, istisqa,
   libas (salah), janaiz (whole kitab, no babs), zakah (kitab's own topics), fitr, sadaqah, qasm.
   The book's numbering skips 442–444 (صلاة المريض, already explained in vol 3 h328–329), so vol 4 starts at 445.
-  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين (complete: intro + all topics, hadith 485–501, pages 109–147). باب صلاة الكسوف (complete: intro + all topics, hadith 502–512, pages 148–168). باب صلاة الاستسقاء (complete: intro + all topics, hadith 513–523, pages 169–200). باب اللباس (complete: intro + all topics, hadith 524–533, pages 201–227). كتاب الجنائز: kitab intro (on the `janaiz` entry in `kitabs`, p. 229) + topics hadith 534–591 (pages 230–370).
-- Next: كتاب الجنائز topic «جواز البكاء على الميت بدون رفع صوت» (page 371; hadith 592). (sources/ now holds vol1–vol10.)
+  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين (complete: intro + all topics, hadith 485–501, pages 109–147). باب صلاة الكسوف (complete: intro + all topics, hadith 502–512, pages 148–168). باب صلاة الاستسقاء (complete: intro + all topics, hadith 513–523, pages 169–200). باب اللباس (complete: intro + all topics, hadith 524–533, pages 201–227). كتاب الجنائز (complete: kitab intro on the `janaiz` entry in `kitabs` + all topics, hadith 534–598, pages 229–387).
+- Next: كتاب الزكاة (from page 389; hadith 599). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
