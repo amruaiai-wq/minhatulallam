@@ -23,12 +23,12 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   فهرس الموضوعات (pp. 527–534). Kitabs salah / janaiz / zakah; babs jumuah, khawf, idayn, kusuf, istisqa,
   libas (salah), janaiz (whole kitab, no babs), zakah (kitab's own topics), fitr, sadaqah, qasm.
   The book's numbering skips 442–444 (صلاة المريض, already explained in vol 3 h328–329), so vol 4 starts at 445.
-  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين (complete: intro + all topics, hadith 485–501, pages 109–147). باب صلاة الكسوف (complete: intro + all topics, hadith 502–512, pages 148–168). باب صلاة الاستسقاء (complete: intro + all topics, hadith 513–523, pages 169–200). باب اللباس (complete: intro + all topics, hadith 524–533, pages 201–227). كتاب الجنائز: kitab intro (on the `janaiz` entry in `kitabs`, p. 229) + topics hadith 534–545 (pages 230–264).
-- Next: كتاب الجنائز topic «ما يكفن فيه الرجل» (page 265; hadith 546). (sources/ now holds vol1–vol10.)
+  Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين (complete: intro + all topics, hadith 485–501, pages 109–147). باب صلاة الكسوف (complete: intro + all topics, hadith 502–512, pages 148–168). باب صلاة الاستسقاء (complete: intro + all topics, hadith 513–523, pages 169–200). باب اللباس (complete: intro + all topics, hadith 524–533, pages 201–227). كتاب الجنائز: kitab intro (on the `janaiz` entry in `kitabs`, p. 229) + topics hadith 534–556 (pages 230–289).
+- Next: كتاب الجنائز topic «النهي عن النعي» (page 290; hadith 557). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
-  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»; vol 3: «ثواب من صلى في اليوم والليلة من النوافل…», «حكم القصر في السفر», and shadda in 3 jamaah headings; vol 4: «وجوب المبادرة بقضاء دَين الميت»).
+  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»; vol 3: «ثواب من صلى في اليوم والليلة من النوافل…», «حكم القصر في السفر», and shadda in 3 jamaah headings; vol 4: «وجوب المبادرة بقضاء دَين الميت», «ما يكفَّن فيه الرجل»).
 - Bab intros (author's text before the first topic) go in `toc.json` as `intro_th` on the bab
   (all babs so far, incl. miyah; shown on the บทนำ page).
 
