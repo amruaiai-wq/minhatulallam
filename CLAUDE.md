@@ -31,8 +31,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Volume 6 (`sources/vol6.pdf`, 504 pages, hadith 782–926, all كتاب البيوع): `vol6/toc.json` built from the book's
   فهرس الموضوعات (pp. 501–504); kitab `buyu` (intro on the `buyu` entry in `kitabs`, pp. 5–6); babs shurut, khiyar, riba,
   araya, salam, taflis, sulh, hawalah, sharikah, iqrar, ariyah, ghasb, shufah, qirad, musaqah, mawat. Validate with `fin4.py 6 782`.
-  Done: باب شروطه وما نهي عنه (complete: intro + all topics, bab `shurut`, hadith 782–825, pages 5–147). باب الخيار (complete: intro + all topics, hadith 826–829, pages 148–161). باب الربا (complete: intro + all topics, hadith 830–847, pages 162–224). باب الرخصة في العرايا وبيع الأصول والثمار (complete: intro + all topics, bab `araya`, hadith 848–854, pages 225–246). أبواب السلم والقرض والرهن (complete: intro + all topics, bab `salam`, hadith 855–864, pages 247–277).
-- Next: باب التفليس والحجر (bab `taflis` in vol 6, intro from page 278; hadith 865). (sources/ now holds vol1–vol10.)
+  Done: باب شروطه وما نهي عنه (complete: intro + all topics, bab `shurut`, hadith 782–825, pages 5–147). باب الخيار (complete: intro + all topics, hadith 826–829, pages 148–161). باب الربا (complete: intro + all topics, hadith 830–847, pages 162–224). باب الرخصة في العرايا وبيع الأصول والثمار (complete: intro + all topics, bab `araya`, hadith 848–854, pages 225–246). أبواب السلم والقرض والرهن (complete: intro + all topics, bab `salam`, hadith 855–864, pages 247–277). باب التفليس والحجر (complete: intro + all topics, bab `taflis`, hadith 865–872, pages 278–308).
+- Next: باب الصلح (bab `sulh` in vol 6, intro from page 309; hadith 873). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
