@@ -31,12 +31,12 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Volume 6 (`sources/vol6.pdf`, 504 pages, hadith 782–926, all كتاب البيوع): `vol6/toc.json` built from the book's
   فهرس الموضوعات (pp. 501–504); kitab `buyu` (intro on the `buyu` entry in `kitabs`, pp. 5–6); babs shurut, khiyar, riba,
   araya, salam, taflis, sulh, hawalah, sharikah, iqrar, ariyah, ghasb, shufah, qirad, musaqah, mawat. Validate with `fin4.py 6 782`.
-  Done: باب شروطه وما نهي عنه (complete: intro + all topics, bab `shurut`, hadith 782–825, pages 5–147). باب الخيار (complete: intro + all topics, hadith 826–829, pages 148–161). باب الربا (complete: intro + all topics, hadith 830–847, pages 162–224). باب الرخصة في العرايا وبيع الأصول والثمار (complete: intro + all topics, bab `araya`, hadith 848–854, pages 225–246).
-- Next: أبواب السلم والقرض والرهن (bab `salam` in vol 6, intro from page 247; hadith 855). (sources/ now holds vol1–vol10.)
+  Done: باب شروطه وما نهي عنه (complete: intro + all topics, bab `shurut`, hadith 782–825, pages 5–147). باب الخيار (complete: intro + all topics, hadith 826–829, pages 148–161). باب الربا (complete: intro + all topics, hadith 830–847, pages 162–224). باب الرخصة في العرايا وبيع الأصول والثمار (complete: intro + all topics, bab `araya`, hadith 848–854, pages 225–246). أبواب السلم والقرض والرهن (complete: intro + all topics, bab `salam`, hadith 855–864, pages 247–277).
+- Next: باب التفليس والحجر (bab `taflis` in vol 6, intro from page 278; hadith 865). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
-  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»; vol 3: «ثواب من صلى في اليوم والليلة من النوافل…», «حكم القصر في السفر», and shadda in 3 jamaah headings; vol 4: «وجوب المبادرة بقضاء دَين الميت», «ما يكفَّن فيه الرجل», «بيان أجر المرأة إذا تصدَّقت من بيت زوجها»; vol 5: «حكم الحج عمن نذره ثم مات قبل أدائه» (no comma), «الدواب التي تُقتل في الحل والحرم», «مشروعية الرمل في الطواف وبيان موضعه» (no comma), «حكم المبيت بمنى»).
+  wins (fixed so far: «بيان كيفية إزالة المني…», «حكم تخليل اللحية…», «بيان فضيلة الوضوء…», «بيان ما لا يُستنجى به» and 4 more in qada-hajah; vol 2: «بعض خصائص النبي ﷺ…»; vol 3: «ثواب من صلى في اليوم والليلة من النوافل…», «حكم القصر في السفر», and shadda in 3 jamaah headings; vol 4: «وجوب المبادرة بقضاء دَين الميت», «ما يكفَّن فيه الرجل», «بيان أجر المرأة إذا تصدَّقت من بيت زوجها»; vol 5: «حكم الحج عمن نذره ثم مات قبل أدائه» (no comma), «الدواب التي تُقتل في الحل والحرم», «مشروعية الرمل في الطواف وبيان موضعه» (no comma), «حكم المبيت بمنى»; vol 6: «حكم شراء السلعة بثمن مؤجل»).
 - Bab intros (author's text before the first topic) go in `toc.json` as `intro_th` on the bab
   (all babs so far, incl. miyah; shown on the บทนำ page).
 
