@@ -28,7 +28,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   فهرس الموضوعات (pp. 388–392). Kitabs siyam / hajj; babs siyam (kitab's own topics), tatawwu, itikaf (siyam),
   fadl, mawaqit, wujuh (one topic = the bab heading), ihram, sifah, fawat (hajj). Validate with `fin4.py 5 650`.
   Done: كتاب الصيام kitab intro (on the `siyam` entry in `kitabs`, pp. 5–6); all the kitab's own topics complete (bab `siyam`, hadith 650–679, pages 7–75). باب صوم التطوع (complete: intro + all topics, bab `tatawwu`, hadith 680–696, pages 76–121). باب الاعتكاف وقيام رمضان (complete: intro + all topics, bab `itikaf`, hadith 697–707, pages 122–155). كتاب الحج kitab intro (on the `hajj` entry in `kitabs`, pp. 156–157). باب فضله وبيان من فرض عليه (complete: bab `fadl`, no separate bab intro, hadith 708–721, pages 158–190). باب المواقيت (complete: intro + all topics, hadith 722–726, pages 191–200). باب وجوه الإحرام وصفته (complete: bab `wujuh`, no separate bab intro, hadith 727, pages 201–205).
-- Next: باب الإحرام وما يتعلق به (bab `ihram` in vol 5, intro from page 206; hadith 728). (sources/ now holds vol1–vol10.)
+- In progress: باب الإحرام وما يتعلق به (bab `ihram`): intro (p. 206) + topics hadith 728–735 (pages 207–229) done.
+- Next: bab `ihram` from page 230 «الدواب التي تقتل في الحِلّ والحرم» (hadith 736). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
