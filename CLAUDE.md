@@ -27,8 +27,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Volume 5 (`sources/vol5.pdf`, 392 pages, hadith 650–781): `vol5/toc.json` built from the book's
   فهرس الموضوعات (pp. 388–392). Kitabs siyam / hajj; babs siyam (kitab's own topics), tatawwu, itikaf (siyam),
   fadl, mawaqit, wujuh (one topic = the bab heading), ihram, sifah, fawat (hajj). Validate with `fin4.py 5 650`.
-  Done: كتاب الصيام kitab intro (on the `siyam` entry in `kitabs`, pp. 5–6); all the kitab's own topics complete (bab `siyam`, hadith 650–679, pages 7–75). باب صوم التطوع (complete: intro + all topics, bab `tatawwu`, hadith 680–696, pages 76–121).
-- Next: باب الاعتكاف وقيام رمضان (bab `itikaf` in vol 5, intro from page 122; hadith 697). (sources/ now holds vol1–vol10.)
+  Done: كتاب الصيام kitab intro (on the `siyam` entry in `kitabs`, pp. 5–6); all the kitab's own topics complete (bab `siyam`, hadith 650–679, pages 7–75). باب صوم التطوع (complete: intro + all topics, bab `tatawwu`, hadith 680–696, pages 76–121). باب الاعتكاف وقيام رمضان (complete: intro + all topics, bab `itikaf`, hadith 697–707, pages 122–155).
+- Next: كتاب الحج (kitab intro p. 156 on the `hajj` entry in `kitabs`), then باب فضله وبيان من فرض عليه (bab `fadl`, from page 158; hadith 708). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
