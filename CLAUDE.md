@@ -28,7 +28,11 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   فهرس الموضوعات (pp. 388–392). Kitabs siyam / hajj; babs siyam (kitab's own topics), tatawwu, itikaf (siyam),
   fadl, mawaqit, wujuh (one topic = the bab heading), ihram, sifah, fawat (hajj). Validate with `fin4.py 5 650`.
   Done: كتاب الصيام kitab intro (on the `siyam` entry in `kitabs`, pp. 5–6); all the kitab's own topics complete (bab `siyam`, hadith 650–679, pages 7–75). باب صوم التطوع (complete: intro + all topics, bab `tatawwu`, hadith 680–696, pages 76–121). باب الاعتكاف وقيام رمضان (complete: intro + all topics, bab `itikaf`, hadith 697–707, pages 122–155). كتاب الحج kitab intro (on the `hajj` entry in `kitabs`, pp. 156–157). باب فضله وبيان من فرض عليه (complete: bab `fadl`, no separate bab intro, hadith 708–721, pages 158–190). باب المواقيت (complete: intro + all topics, hadith 722–726, pages 191–200). باب وجوه الإحرام وصفته (complete: bab `wujuh`, no separate bab intro, hadith 727, pages 201–205). باب الإحرام وما يتعلق به (complete: intro + all topics, hadith 728–741, pages 206–248). باب صفة الحج ودخول مكة (complete: intro + all topics, bab `sifah`, hadith 742–778, pages 249–365). باب الفوات والإحصار (complete: intro + all topics, bab `fawat`, hadith 779–781, pages 366–377). **Volume 5 complete.**
-- Next: Volume 6 (`sources/vol6.pdf`, starts with كتاب البيوع, hadith 782): build `vol6/toc.json` from the book's فهرس الموضوعات first. (sources/ now holds vol1–vol10.)
+- Volume 6 (`sources/vol6.pdf`, 504 pages, hadith 782–926, all كتاب البيوع): `vol6/toc.json` built from the book's
+  فهرس الموضوعات (pp. 501–504); kitab `buyu` (intro on the `buyu` entry in `kitabs`, pp. 5–6); babs shurut, khiyar, riba,
+  araya, salam, taflis, sulh, hawalah, sharikah, iqrar, ariyah, ghasb, shufah, qirad, musaqah, mawat. Validate with `fin4.py 6 782`.
+  Done: باب شروطه وما نهي عنه (complete: intro + all topics, bab `shurut`, hadith 782–825, pages 5–147).
+- Next: باب الخيار (bab `khiyar` in vol 6, intro from page 148; hadith 826). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
