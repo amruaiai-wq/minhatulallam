@@ -24,7 +24,11 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   libas (salah), janaiz (whole kitab, no babs), zakah (kitab's own topics), fitr, sadaqah, qasm.
   The book's numbering skips 442–444 (صلاة المريض, already explained in vol 3 h328–329), so vol 4 starts at 445.
   Validate with a fin script that starts at 445. Done: باب صلاة الجمعة (complete: intro + all topics, hadith 445–474, pages 5–88). باب صلاة الخوف (complete: intro + all topics, hadith 475–484, pages 89–108). باب صلاة العيدين (complete: intro + all topics, hadith 485–501, pages 109–147). باب صلاة الكسوف (complete: intro + all topics, hadith 502–512, pages 148–168). باب صلاة الاستسقاء (complete: intro + all topics, hadith 513–523, pages 169–200). باب اللباس (complete: intro + all topics, hadith 524–533, pages 201–227). كتاب الجنائز (complete: kitab intro on the `janaiz` entry in `kitabs` + all topics, hadith 534–598, pages 229–387). كتاب الزكاة: kitab intro (on the `zakah` entry in `kitabs`, pp. 389–390) + all the kitab's own topics complete (bab `zakah`, hadith 599–626, pages 391–456). باب صدقة الفطر (complete: intro + all topics, hadith 627–630, pages 457–465). باب صدقة التطوع (complete: intro + all topics, hadith 631–642, pages 466–492). باب قسم الصدقات (complete: intro + all topics, hadith 643–649, pages 493–511). **Volume 4 complete.**
-- Next: Volume 5 (`sources/vol5.pdf`, starts with كتاب الصيام; hadith 650): build `vol5/toc.json` from the book's فهرس الموضوعات first. (sources/ now holds vol1–vol10.)
+- Volume 5 (`sources/vol5.pdf`, 392 pages, hadith 650–781): `vol5/toc.json` built from the book's
+  فهرس الموضوعات (pp. 388–392). Kitabs siyam / hajj; babs siyam (kitab's own topics), tatawwu, itikaf (siyam),
+  fadl, mawaqit, wujuh (one topic = the bab heading), ihram, sifah, fawat (hajj). Validate with `fin4.py 5 650`.
+  Done: كتاب الصيام kitab intro (on the `siyam` entry in `kitabs`, pp. 5–6); kitab topics hadith 650–663 (pages 7–39).
+- Next: كتاب الصيام topics from page 40 «حكم القبلة والمباشرة للصائم» (hadith 664). (sources/ now holds vol1–vol10.)
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
