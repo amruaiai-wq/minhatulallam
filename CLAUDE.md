@@ -37,8 +37,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   wasaya, wadiah (buyu), nikah (kitab's own topics), kafaah, ishrah, sadaq, walimah, qasm, khul (nikah), talaq (kitab's own
   topics), rajah (talaq). Validate with `fin4.py 7 927`. The index prints 247 for the topic «ما جاء في أن المطلقة ثلاثاً…»;
   the hadith index gives 274 (used).
-  Done: باب الوقف (complete: intro + all topics, bab `waqf`, hadith 927–929, pages 5–25).
-- Next: باب الهبة (bab `hibah` in vol 7, intro from page 26; hadith 930).
+  Done: باب الوقف (complete: intro + all topics, bab `waqf`, hadith 927–929, pages 5–25). باب الهبة (complete: intro + all topics, bab `hibah`, hadith 930–940, pages 26–70).
+- Next: باب اللقطة (bab `luqatah` in vol 7, intro from page 71; hadith 941).
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
