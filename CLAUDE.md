@@ -150,4 +150,10 @@ prototype built from the real JSON. The real site must match its screens, layout
 
 ## Note
 
-The book is under copyright (author and publisher). Get permission before publishing publicly.
+The book is under copyright (author and publisher). The user reports that permission to publish has been obtained (2026-11-08).
+
+## Published link
+
+- Private claude.ai artifact: https://claude.ai/artifact/1zDYc7mTGgFRKgGXevYjyW (sharing is set by the user from the page's Share menu).
+- To update after new batches: `python tools/build_preview.py`, then `python tools/build_artifact.py`, then publish
+  `site/artifact.html` with the Artifact tool, passing the URL above as `url` (keeps the same link).

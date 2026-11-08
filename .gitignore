@@ -18,3 +18,4 @@ node_modules/
 Thumbs.db
 *.log
 .claude/settings.local.json
+site/artifact.html
