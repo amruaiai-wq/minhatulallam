@@ -366,7 +366,7 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
     var have = {}; entries.forEach(function (e) { have[(e.volume || 1) + ":" + e.bab + ":" + e.pages[0]] = e; });
     var vols = []; babs.forEach(function (b) { var v = b.volume || 1; if (vols.indexOf(v) < 0) vols.push(v); });
     var lastHead = "";
-    root.innerHTML = '<div class="view"><div class="topbar"><a class="icon-btn" href="#home" aria-label="กลับหน้าแรก">' + ICON.back + '</a><div class="t"><small>เล่ม ' + vols.join("–") + '</small><b>สารบัญ</b></div></div>'
+    root.innerHTML = '<div class="view"><div class="topbar"><a class="icon-btn" href="#home" aria-label="กลับหน้าแรก">' + ICON.back + '</a><div class="t"><small>เล่ม ' + (vols.length > 1 ? vols[0] + "–" + vols[vols.length - 1] : vols[0]) + '</small><b>สารบัญ</b></div></div>'
       + '<div class="pad" style="padding-block:16px;display:flex;flex-direction:column;gap:12px">'
       + babs.map(function (b) {
           var n = b.topics.filter(function (t) { return have[(b.volume || 1) + ":" + b.id + ":" + t.page]; }).length;
