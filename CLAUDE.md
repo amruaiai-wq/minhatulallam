@@ -32,7 +32,13 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   فهرس الموضوعات (pp. 501–504); kitab `buyu` (intro on the `buyu` entry in `kitabs`, pp. 5–6); babs shurut, khiyar, riba,
   araya, salam, taflis, sulh, hawalah, sharikah, iqrar, ariyah, ghasb, shufah, qirad, musaqah, mawat. Validate with `fin4.py 6 782`.
   Done: باب شروطه وما نهي عنه (complete: intro + all topics, bab `shurut`, hadith 782–825, pages 5–147). باب الخيار (complete: intro + all topics, hadith 826–829, pages 148–161). باب الربا (complete: intro + all topics, hadith 830–847, pages 162–224). باب الرخصة في العرايا وبيع الأصول والثمار (complete: intro + all topics, bab `araya`, hadith 848–854, pages 225–246). أبواب السلم والقرض والرهن (complete: intro + all topics, bab `salam`, hadith 855–864, pages 247–277). باب التفليس والحجر (complete: intro + all topics, bab `taflis`, hadith 865–872, pages 278–308). باب الصلح (complete: intro + all topics, bab `sulh`, hadith 873–876, pages 309–324). باب الحوالة والضمان (complete: intro + all topics, bab `hawalah`, hadith 877–880, pages 325–341). باب الشركة والوكالة (complete: intro + all topics, bab `sharikah`, hadith 881–888, pages 342–361). باب الإقرار (complete: intro + all topics, bab `iqrar`, hadith 889, pages 362–366). باب العارية (complete: intro + all topics, bab `ariyah`, hadith 890–894, pages 367–384). باب الغصب (complete: intro + all topics, bab `ghasb`, hadith 895–900, pages 385–403). باب الشفعة (complete: intro + all topics, bab `shufah`, hadith 901–905, pages 404–424). باب القراض (complete: intro + all topics, bab `qirad`, hadith 906–907, pages 425–433; the Malik athar after h907 is unnumbered in the book). باب المساقاة (complete: intro + all topics, bab `musaqah`, hadith 908–916, pages 434–464). باب إحياء الموات (complete: intro + all topics, bab `mawat`, hadith 917–926, pages 465–491). **Volume 6 complete.**
-- Next: Volume 7 (`sources/vol7.pdf`): build `vol7/toc.json` from the book's فهرس الموضوعات, then start at باب الوقف (hadith 927).
+- Volume 7 (`sources/vol7.pdf`, 614 pages, hadith 927–1094): `vol7/toc.json` built from the book's
+  فهرس الموضوعات (pp. 609–614). Kitabs buyu (cont.) / nikah (p. 169) / talaq (p. 507); babs waqf, hibah, luqatah, faraid,
+  wasaya, wadiah (buyu), nikah (kitab's own topics), kafaah, ishrah, sadaq, walimah, qasm, khul (nikah), talaq (kitab's own
+  topics), rajah (talaq). Validate with `fin4.py 7 927`. The index prints 247 for the topic «ما جاء في أن المطلقة ثلاثاً…»;
+  the hadith index gives 274 (used).
+  Done: باب الوقف (complete: intro + all topics, bab `waqf`, hadith 927–929, pages 5–25).
+- Next: باب الهبة (bab `hibah` in vol 7, intro from page 26; hadith 930).
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan

@@ -184,8 +184,8 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
   var babs = D.toc.babs, entries = D.entries;
   var babById = {}; babs.forEach(function (b) { babById[(b.volume || 1) + ":" + b.id] = b; });
   var babOf = function (e) { return babById[(e.volume || 1) + ":" + e.bab]; };
-  var KNAME = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์", siyam: "กิตาบอัศศิยาม", hajj: "กิตาบอัลหัจญ์", buyu: "กิตาบอัลบุยูอ์" };
-  var KSHORT = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์", siyam: "อัศศิยาม", hajj: "อัลหัจญ์", buyu: "อัลบุยูอ์" };
+  var KNAME = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์", siyam: "กิตาบอัศศิยาม", hajj: "กิตาบอัลหัจญ์", buyu: "กิตาบอัลบุยูอ์", nikah: "กิตาบอันนิกาห์", talaq: "กิตาบอัฏเฏาะลาก" };
+  var KSHORT = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์", siyam: "อัศศิยาม", hajj: "อัลหัจญ์", buyu: "อัลบุยูอ์", nikah: "อันนิกาห์", talaq: "อัฏเฏาะลาก" };
   var kitabOf = function (b) { return b.kitab || "taharah"; };
   var volOf = function (e) { return e.volume || 1; };
   var KITABS = [
@@ -196,7 +196,8 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
     { ar: "كتاب الصيام", th: "การถือศีลอด", ids: ["siyam"] },
     { ar: "كتاب الحج", th: "ฮัจญ์", ids: ["hajj"] },
     { ar: "كتاب البيوع", th: "การซื้อขาย", ids: ["buyu"] },
-    { ar: "كتاب النكاح", th: "การแต่งงาน" },
+    { ar: "كتاب النكاح", th: "การแต่งงาน", ids: ["nikah"] },
+    { ar: "كتاب الطلاق", th: "การหย่า", ids: ["talaq"] },
     { ar: "كتاب الجنايات", th: "อาชญากรรมต่อชีวิต" },
     { ar: "كتاب الحدود", th: "บทลงโทษหัดด์" },
     { ar: "كتاب الجهاد", th: "ญิฮาด" },
