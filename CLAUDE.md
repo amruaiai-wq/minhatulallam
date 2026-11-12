@@ -37,8 +37,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   wasaya, wadiah (buyu), nikah (kitab's own topics), kafaah, ishrah, sadaq, walimah, qasm, khul (nikah), talaq (kitab's own
   topics), rajah (talaq). Validate with `fin4.py 7 927`. The index prints 247 for the topic «ما جاء في أن المطلقة ثلاثاً…»;
   the hadith index gives 274 (used).
-  Done: باب الوقف (complete: intro + all topics, bab `waqf`, hadith 927–929, pages 5–25). باب الهبة (complete: intro + all topics, bab `hibah`, hadith 930–940, pages 26–70). باب اللقطة (complete: intro + all topics, bab `luqatah`, hadith 941–946, pages 71–93). باب الفرائض (complete: intro + all topics, bab `faraid`, hadith 947–959, pages 94–138). باب الوصايا (complete: intro + all topics, bab `wasaya`, hadith 960–967, pages 139–163). باب الوديعة (complete: intro + all topics, bab `wadiah`, hadith 968, pages 164–168). كتاب النكاح kitab intro (on the `nikah` entry in `kitabs`, p. 169); bab `nikah` topics 1–8 done (hadith 969–980, pages 170–208).
-- Next: bab `nikah` topic «بِمَ ينعقد النكاح؟» (vol 7, page 209; hadith 981).
+  Done: باب الوقف (complete: intro + all topics, bab `waqf`, hadith 927–929, pages 5–25). باب الهبة (complete: intro + all topics, bab `hibah`, hadith 930–940, pages 26–70). باب اللقطة (complete: intro + all topics, bab `luqatah`, hadith 941–946, pages 71–93). باب الفرائض (complete: intro + all topics, bab `faraid`, hadith 947–959, pages 94–138). باب الوصايا (complete: intro + all topics, bab `wasaya`, hadith 960–967, pages 139–163). باب الوديعة (complete: intro + all topics, bab `wadiah`, hadith 968, pages 164–168). كتاب النكاح kitab intro (on the `nikah` entry in `kitabs`, p. 169); bab `nikah` topics 1–14 done (hadith 969–989, pages 170–244).
+- Next: bab `nikah` topic «تخيير البكر إذا زُوجت وهي كارهة» (vol 7, page 245; hadith 990).
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
