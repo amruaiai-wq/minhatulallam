@@ -43,8 +43,8 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   nafaqat, hadanah (talaq), jinayat (kitab's own topics), diyat, qasamah, baghy, murtadd (jinayat), zina, qadhf, sariqah,
   sharib, tazir (hudud; the kitab has no topics of its own). Validate with `fin4.py 8 1095`; write entries with `w8h.py`.
   The prototype's KITABS list now has ids `jinayat` and `hudud`.
-  Done: باب الإيلاء والظهار والكفارة (complete: intro + all topics, bab `ila`, hadith 1095–1100, pages 5–23). باب اللعان (complete: intro + all topics, bab `lian`, hadith 1101–1109, pages 24–53). باب العدة والإحداد والاستبراء: intro + topics 1–7 done (bab `iddah`, hadith 1110–1118, pages 54–94).
-- Next: rest of bab `iddah` in vol 8, from «ما جاء في عدة أم الولد» (page 95, hadith 1119).
+  Done: باب الإيلاء والظهار والكفارة (complete: intro + all topics, bab `ila`, hadith 1095–1100, pages 5–23). باب اللعان (complete: intro + all topics, bab `lian`, hadith 1101–1109, pages 24–53). باب العدة والإحداد والاستبراء (complete: intro + all topics, bab `iddah`, hadith 1110–1133, pages 54–124).
+- Next: باب الرضاع (bab `rada` in vol 8, intro from page 125; hadith 1134).
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
