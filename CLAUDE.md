@@ -125,7 +125,7 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   ศ่อฮีห์ = grade, เศาะฮีห์ = book title (เศาะฮีห์บุคอรีย์, เศาะฮีห์ทั้งสอง) · หะซัน = grade, หะสัน = name ·
   อุละมาอ์ (นักหะดีษ, นักภาษา) · ฟุเกาะฮาอ์ · อิจญ์มาอ์ (not มติ) · ฟัรฎู/วาญิบ follow the Arabic word ·
   รายงาน / รายงานโดย (not บันทึกโดย) · (บุคอรีย์และมุสลิม) for متفق عليه · บุคอรีย์ (no อัล) ·
-  อัลหาฟิซ for Ibn Hajar · อิบนุตัยมิยะฮ์ · วุฎูอ์ / ทำวุฎูอ์ · ผู้แต่ง = al-Fawzan only, ชัยค์ for other
+  อัลหาฟิซ for Ibn Hajar · อิบนุตัยมิยะฮ์ · วุฎูอ์ / ทำวุฎูอ์ · ข้อตัดสิน (not หุก่ม) · ผู้แต่ง = al-Fawzan only, ชัยค์ for other
   shaykhs, ผู้เขียน «…» for authors of other books · names with a space: «อับดุลลอฮ์ บิน อัมร์» (บินต์ joined) ·
   « » for the Prophet's words and quoted text, ( ) for scholars' quotations · ﷺ after every mention in
   hadith translations and at the first mention in each explanation point · grade_th: a fixed head word
