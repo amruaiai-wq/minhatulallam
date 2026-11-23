@@ -44,7 +44,7 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   sharib, tazir (hudud; the kitab has no topics of its own). Validate with `fin4.py 8 1095`; write entries with `w8h.py`.
   The prototype's KITABS list now has ids `jinayat` and `hudud`.
   Done: باب الإيلاء والظهار والكفارة (complete: intro + all topics, bab `ila`, hadith 1095–1100, pages 5–23). باب اللعان (complete: intro + all topics, bab `lian`, hadith 1101–1109, pages 24–53). باب العدة والإحداد والاستبراء (complete: intro + all topics, bab `iddah`, hadith 1110–1133, pages 54–124). باب الرضاع (complete: intro + all topics, bab `rada`, hadith 1134–1144, pages 125–155). باب النفقات (complete: intro + all topics, bab `nafaqat`, hadith 1145–1157, pages 156–188). باب الحضانة (complete: intro + all topics, bab `hadanah`, hadith 1158–1164, pages 189–210). كتاب الجنايات kitab intro (on the `jinayat` entry in `kitabs`, p. 211); all the kitab's own topics complete (bab `jinayat`, no separate bab intro, hadith 1165–1183, pages 212–274). باب الديات (complete: intro + all topics, bab `diyat`, hadith 1184–1196, pages 275–320). باب دعوى الدم والقسامة (complete: intro + all topics, bab `qasamah`, hadith 1197–1198, pages 321–333). باب قتال أهل البغي (complete: intro + all topics, bab `baghy`, hadith 1199–1204, pages 334–350). باب قتال الجاني وقتل المرتد (complete: intro + all topics, bab `murtadd`, hadith 1205–1211, pages 351–371; its first topic heading «ما جاء فيمن قتل دون ماله» recurs in bab `tazir` (p. 548), so fin4 matches topics by (bab, heading)). كتاب الحدود kitab intro (on the `hudud` entry in `kitabs`, pp. 373–374). باب حد الزاني (complete: intro pp. 374–375 + all topics, bab `zina`, hadith 1212–1229, pages 376–437). باب حد القذف (complete: intro + all topics, bab `qadhf`, hadith 1230–1234, pages 438–450). باب حد السرقة (complete: intro pp. 451–452 + all topics, bab `sariqah`, hadith 1235–1247, pages 453–496). باب حد الشارب وبيان المسكر (complete: intro + all topics, bab `sharib`, hadith 1248–1259, pages 497–533). باب التعزير وحكم الصائل (complete: intro + all topics, bab `tazir`, hadith 1260–1265, pages 534–553). **Volume 8 complete.**
-- Next: Volume 9 (`sources/vol9.pdf`, starts with كتاب الجهاد): build `vol9/toc.json` from the book's فهرس الموضوعات first. Before publishing, solve the artifact size: `site/artifact.html` is ~15 MB after vol 8 and the limit is 16 MB.
+- Next (user's plan, 2026-11-23): **review and polish vols 1–8 before any new volume.** Step 1–2 done (audit + style guide, applied). Next: step 3 — polish one bab at a time (matn harakat → author's tarjih and grades → Thai prose), standardize grade_th, then build the Astro site. Vol 9 (`sources/vol9.pdf`, كتاب الجهاد) waits; the artifact is ~15 MB of a 16 MB limit.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
@@ -120,6 +120,18 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
 - Thai terms: transliterate fiqh terms as used so far — ฏอฮูร, ฮะดัษ (เล็ก/ใหญ่), นะญิส,
   ญะนาบะฮ์, อิจญ์มาอ์, มักรูฮ์, หะรอม, วาญิบ, ศ่อฮีห์, หะซัน, ฎออีฟ, มุรสัล, เมากูฟ, มุดัลลิส.
   Honorific after a companion's name: (ร.ฎ.).
+- **Style guide (approved 2026-11-23, full table in `docs/style_guide.md`; applied to vols 1–8 by
+  `tools/style_fix.py`, check with `tools/audit.py`):** ท่านเราะซูล / เราะซูลุลลอฮ์ · สุนนะฮ์ ·
+  ศ่อฮีห์ = grade, เศาะฮีห์ = book title (เศาะฮีห์บุคอรีย์, เศาะฮีห์ทั้งสอง) · หะซัน = grade, หะสัน = name ·
+  อุละมาอ์ (นักหะดีษ, นักภาษา) · ฟุเกาะฮาอ์ · อิจญ์มาอ์ (not มติ) · ฟัรฎู/วาญิบ follow the Arabic word ·
+  รายงาน / รายงานโดย (not บันทึกโดย) · (บุคอรีย์และมุสลิม) for متفق عليه · บุคอรีย์ (no อัล) ·
+  อัลหาฟิซ for Ibn Hajar · อิบนุตัยมิยะฮ์ · วุฎูอ์ / ทำวุฎูอ์ · ผู้แต่ง = al-Fawzan only, ชัยค์ for other
+  shaykhs, ผู้เขียน «…» for authors of other books · names with a space: «อับดุลลอฮ์ บิน อัมร์» (บินต์ joined) ·
+  « » for the Prophet's words and quoted text, ( ) for scholars' quotations · ﷺ after every mention in
+  hadith translations and at the first mention in each explanation point · grade_th: a fixed head word
+  (ศ่อฮีห์ · หะซัน · ฎออีฟ · ฎออีฟมาก · เมาฎูอ์ · เมากูฟ · มุรสัล · มีข้อขัดแย้ง) + a short parenthesis ·
+  author's verdict as ผู้แต่ง: «الراجح…» + Thai, or "(ผู้แต่งไม่ได้ชี้ขาด)" · key rulings 3–5 (fewer only
+  when the source has fewer points) · paragraphs ≤ ~700 chars.
 - Always keep the **author's own tarjih** (الراجح / الصواب / الصحيح) clear. When the author
   disagrees with a narration or an opinion, say so explicitly ("ผู้แต่งเห็นว่า…").
 - Attribute claims: opinions to the scholar who holds them; scientific or modern claims
