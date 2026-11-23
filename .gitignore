@@ -19,3 +19,4 @@ Thumbs.db
 *.log
 .claude/settings.local.json
 site/artifact.html
+tools/audit_out.json
