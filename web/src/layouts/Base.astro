@@ -1,0 +1,39 @@
+---
+import "../styles/app.css";
+import { url } from "../lib/data";
+interface Props { title?: string; tab?: "home" | "toc" | "search" | "saved"; description?: string }
+const { title, tab = "home", description = "สรุปภาษาไทยของ منحة العلام في شرح بلوغ المرام โดยชัยค์อับดุลลอฮ์ อัลเฟาซาน" } = Astro.props;
+const full = title ? `${title} · มินหะตุลอัลลาม` : "สรุปมินหะตุลอัลลาม";
+const tabs = [
+  { id: "home", href: url(), label: "หน้าแรก", icon: '<path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/>' },
+  { id: "toc", href: url("toc/"), label: "สารบัญ", icon: '<path d="M4 5h6a2 2 0 012 2v13a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v13a2 2 0 012-2h6z"/>' },
+  { id: "search", href: url("search/"), label: "ค้นหา", icon: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>' },
+  { id: "saved", href: url("saved/"), label: "บุ๊กมาร์ก", icon: '<path d="M6 4h12v17l-6-4-6 4z"/>' },
+];
+---
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" />
+    <script is:inline>try{if(JSON.parse(localStorage.getItem("mode"))==="quick")document.documentElement.classList.add("quick")}catch(e){}</script>
+    <style is:global>body { margin: 0; }</style>
+  </head>
+  <body data-base={url()}>
+    <div class="app"><main id="root"><slot /></main></div>
+    <div class="tabbar"><nav aria-label="เมนูหลัก">
+      <a class="brand" href={url()}><span class="ar">منحة العلام</span><span>สรุปมินหะตุลอัลลาม</span></a>
+      {tabs.map((t) => (
+        <a href={t.href} aria-current={t.id === tab ? "page" : undefined}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={t.icon} />{t.label}
+        </a>
+      ))}
+    </nav></div>
+  </body>
+</html>

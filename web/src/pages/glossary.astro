@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import { glossary, label, strip, topicUrl, url } from "../lib/data";
+import { ICON } from "../lib/icons";
+let last = "";
+const rows = glossary.map((g) => { const L = g.key.charAt(0), head = L !== last ? L : ""; last = L; return { g, L, head }; });
+---
+<Base title="อภิธานศัพท์" tab="home">
+  <div class="view">
+    <form class="sbar" id="gf" role="search">
+      <a class="icon-btn" href={url()} aria-label="กลับหน้าแรก" set:html={ICON.back} />
+      <label class="searchbox"><Fragment set:html={ICON.search} /><span style="position:absolute;width:1px;height:1px;overflow:hidden">ค้นหาคำศัพท์</span>
+        <input id="gq" type="search" placeholder="ค้นหาคำศัพท์ อาหรับหรือไทย" autocomplete="off" /></label>
+    </form>
+    <div class="pad" style="padding-block:16px;display:flex;flex-direction:column;gap:12px">
+      <div class="row-between"><h2 class="h2">อภิธานศัพท์</h2><span id="gcount" class="muted" style="font-size:13px">{glossary.length} คำ</span></div>
+      <div id="glist" style="display:flex;flex-direction:column;gap:10px">
+        {rows.map(({ g, L, head }) => (
+          <>
+            {head && <div class="letter" lang="ar" data-letter={L}>{head}</div>}
+            <div class="card term" data-l={L} data-h={strip((g.ar + " " + g.defs.join(" ")).toLowerCase())}>
+              <div class="ar" lang="ar">{g.ar}</div>
+              {g.defs.map((d) => <div class="th">{d}</div>)}
+              <div class="src">
+                {g.src.slice(0, 8).map((e) => <a href={topicUrl(e)}>หะดีษที่ {label(e)}</a>)}
+                {g.src.length > 8 && <span class="muted">+{g.src.length - 8}</span>}
+              </div>
+            </div>
+          </>
+        ))}
+        <div class="empty" id="gempty" hidden>ไม่พบคำศัพท์ที่ตรงกับคำค้น</div>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  const strip = (s: string) => s.replace(/[ً-ٰٟ]/g, "");
+  const input = document.getElementById("gq") as HTMLInputElement;
+  const terms = [...document.querySelectorAll<HTMLElement>(".term")], letters = [...document.querySelectorAll<HTMLElement>("[data-letter]")];
+  function run() {
+    const q = strip(input.value.trim().toLowerCase()), seen = new Set<string>(); let n = 0;
+    for (const t of terms) { const ok = !q || t.dataset.h!.includes(q); t.hidden = !ok; if (ok) { n++; seen.add(t.dataset.l!); } }
+    for (const l of letters) l.hidden = !seen.has(l.dataset.letter!);
+    document.getElementById("gcount")!.textContent = n + " คำ";
+    (document.getElementById("gempty") as HTMLElement).hidden = n > 0;
+  }
+  input.addEventListener("input", run);
+  document.getElementById("gf")!.addEventListener("submit", (ev) => { ev.preventDefault(); input.blur(); });
+</script>

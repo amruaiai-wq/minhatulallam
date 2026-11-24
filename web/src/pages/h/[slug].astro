@@ -1,0 +1,94 @@
+---
+import Base from "../../layouts/Base.astro";
+import { entries, babOf, KNAME, label, slug, topicUrl, url, type Entry } from "../../lib/data";
+import { ICON } from "../../lib/icons";
+
+export function getStaticPaths() {
+  return entries.map((e, i) => ({ params: { slug: slug(e) }, props: { e, prev: entries[i - 1], next: entries[i + 1] } }));
+}
+const { e, prev, next } = Astro.props as { e: Entry; prev?: Entry; next?: Entry };
+const b = babOf(e);
+---
+<Base title={`หะดีษที่ ${label(e)} ${e.topic_th}`} tab="toc" description={e.key_rulings_th[0]}>
+  <div class="view" data-slug={slug(e)}>
+    <div class="topbar">
+      <a class="icon-btn" href={url("toc/")} aria-label="กลับไปสารบัญ" set:html={ICON.back} />
+      <div class="t"><small>{KNAME[b.kitab]} › {b.th}</small><b>หะดีษที่ {label(e)}</b></div>
+      <button class="icon-btn" id="bm" aria-pressed="false" aria-label="บุ๊กมาร์ก" set:html={ICON.mark} />
+    </div>
+    <div class="pad" style="padding-top:16px">
+      <div class="seg" role="group" aria-label="โหมดการอ่าน">
+        <button id="mq" aria-pressed="false">อ่านเร็ว</button><button id="md" aria-pressed="true">อ่านละเอียด</button>
+      </div>
+    </div>
+    <div class="hbody pad">
+      <div class="topic-title">
+        <div class="ar" lang="ar">{e.topic_ar}</div>
+        <h1>{e.topic_th}</h1>
+        <span class="muted" style="font-size:13px">หน้า {e.pages[0]}–{e.pages[1]} ในเล่ม {e.volume}</span>
+      </div>
+      <div class="hgrid">
+        <div class="hcol hcol-a">
+          {e.hadith.map((hd) => (
+            <section class="card matn-card">
+              <div class="hno"><span>หะดีษที่ {hd.no}</span><span class="grade">{hd.grade_th}</span></div>
+              <p class="matn ar" lang="ar">{hd.matn_ar}</p>
+              <p class="tr">{hd.translation_th}</p>
+            </section>
+          ))}
+          <section class="card sec"><h2>สรุปข้อตัดสิน</h2><ol>{e.key_rulings_th.map((r) => <li>{r}</li>)}</ol></section>
+        </div>
+        <div class="hcol hcol-b deep">
+          {(e.vocab || []).length > 0 && (
+            <section class="sec deep" style="padding:0"><h2>คำศัพท์</h2>
+              <div class="vocab">{e.vocab!.map((v) => <div class="v"><div class="ar" lang="ar">{v.ar}</div><div>{v.th}</div></div>)}</div>
+            </section>
+          )}
+          <section class="card sec deep"><h2>คำอธิบายของผู้แต่ง</h2>
+            {e.sections.map((sc) => (
+              <div class="wajh">
+                <div class="wajh-head"><b>{sc.heading_th}</b><span class="ar" lang="ar">الوجه {sc.wajh}</span></div>
+                <ul>{sc.points_th.map((p) => <li>{p}</li>)}</ul>
+              </div>
+            ))}
+          </section>
+        </div>
+      </div>
+      <div class="chips">
+        {(e.tags_th || []).map((t) => <a class="chip" style="font-size:13px;padding:6px 12px" href={url("search/?f=tag&q=" + encodeURIComponent(t))}>#{t}</a>)}
+      </div>
+      <div class="pager">
+        {prev ? <a class="prev" href={topicUrl(prev)}><small class="muted">ก่อนหน้า</small><span>‹ หะดีษที่ {label(prev)}</span></a>
+              : <a class="prev dis" aria-disabled="true"><small>ก่อนหน้า</small><span>—</span></a>}
+        {next ? <a class="next" href={topicUrl(next)}><small>ถัดไป</small><span>หะดีษที่ {label(next)} ›</span></a>
+              : <a class="prev dis" aria-disabled="true" style="text-align:right"><small>ถัดไป</small><span>ยังไม่มี</span></a>}
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import { store } from "../../lib/store";
+  import { ICON } from "../../lib/icons";
+  const s = (document.querySelector("[data-slug]") as HTMLElement).dataset.slug!;
+  store.set("last", s);
+  const html = document.documentElement;
+  const mq = document.getElementById("mq")!, md = document.getElementById("md")!;
+  const setMode = (m: string) => {
+    store.set("mode", m);
+    html.classList.toggle("quick", m === "quick");
+    mq.setAttribute("aria-pressed", String(m === "quick"));
+    md.setAttribute("aria-pressed", String(m !== "quick"));
+  };
+  mq.onclick = () => setMode("quick");
+  md.onclick = () => setMode("deep");
+  setMode(store.get("mode", "deep"));
+  const bm = document.getElementById("bm")!;
+  const paint = (on: boolean) => { bm.setAttribute("aria-pressed", String(on)); bm.innerHTML = on ? ICON.markOn : ICON.mark; };
+  paint(store.get<string[]>("saved", []).includes(s));
+  bm.onclick = () => {
+    const sv = store.get<string[]>("saved", []), k = sv.indexOf(s);
+    if (k >= 0) sv.splice(k, 1); else sv.push(s);
+    store.set("saved", sv); paint(k < 0);
+  };
+</script>

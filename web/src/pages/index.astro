@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import { entries, babs, babOf, KITABS, KNAME, TOTAL, kitabIntros, glossary, label, nos, topicUrl, url, tagCounts } from "../lib/data";
+import { ICON } from "../lib/icons";
+const first = entries[0], fb = babOf(first), fdone = nos(first).at(-1)!;
+const introCount = kitabIntros.length + babs.filter((b) => b.intro_th).length;
+---
+<Base tab="home">
+  <div class="view">
+    <header class="hero pad">
+      <div class="hero-top"><span>มินหะตุลอัลลาม</span></div>
+      <div class="ar" lang="ar">منحة العلام في شرح بلوغ المرام</div>
+      <h1>สรุปมินหะตุลอัลลาม</h1>
+      <p>คำอธิบายบุลูฆุลมะรอม ฉบับสรุปภาษาไทย อ่านทีละหะดีษ</p>
+      <form class="searchbox" role="search" action={url("search/")} method="get">
+        <Fragment set:html={ICON.search} />
+        <label for="hq" style="position:absolute;width:1px;height:1px;overflow:hidden">ค้นหา</label>
+        <input id="hq" name="q" type="search" placeholder="ค้นหา: คำไทย, อาหรับ หรือเลขหะดีษ" />
+      </form>
+    </header>
+    <div class="home-body pad">
+      <a class="card continue" id="cont" href={topicUrl(first)}>
+        <div class="row-between"><b id="cont-k" style="font-size:13px;color:var(--gold)">เริ่มอ่าน</b><span id="cont-l" class="muted" style="font-size:13px">หะดีษที่ {label(first)}</span></div>
+        <div id="cont-t" style="font-size:16px;font-weight:600;line-height:1.5">{fb.th} · {first.topic_th}</div>
+        <div class="progress"><div id="cont-p" style={`width:${Math.round(fdone / TOTAL * 100)}%`}></div></div>
+        <div id="cont-m" class="muted" style="font-size:13px">{KNAME[fb.kitab]} · หะดีษ {fdone} จาก {TOTAL}</div>
+      </a>
+      <section style="display:flex;flex-direction:column;gap:12px">
+        <div class="row-between"><h2 class="h2">สารบัญกิตาบ</h2><a href={url("toc/")} style="font-size:14px;font-weight:600">ดูทั้งหมด</a></div>
+        <div class="kgrid">
+          {KITABS.map((k) => k.ready
+            ? <a class="card kcard" href={url("toc/")}><div class="ar" lang="ar">{k.ar}</div><div style="font-size:15px;font-weight:600">{k.th}</div><div class="muted" style="font-size:12px">สรุปแล้ว {k.done}{k.total ? ` จาก ${k.total}` : ""} หะดีษ</div></a>
+            : <span class="card kcard off" aria-disabled="true"><div class="ar" lang="ar">{k.ar}</div><div style="font-size:15px;font-weight:600">{k.th}</div><div class="muted" style="font-size:12px">เร็ว ๆ นี้</div></span>)}
+        </div>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:12px">
+        <h2 class="h2">หมวดเสริม</h2>
+        <div class="extra-grid">
+          <a class="card xcard" href={url("intros/")}><b>บทนำ</b><span>คำนิยามและบทนำของกิตาบและบาบ ({introCount})</span></a>
+          <a class="card xcard" href={url("glossary/")}><b>อภิธานศัพท์</b><span>คำศัพท์จากทุกหัวข้อ ({glossary.length} คำ)</span></a>
+        </div>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:12px">
+        <h2 class="h2">หัวข้อยอดนิยม</h2>
+        <div class="chips">{tagCounts().slice(0, 10).map((t) => <a class="chip" href={url("search/?f=tag&q=" + encodeURIComponent(t))}>{t}</a>)}</div>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import { store } from "../lib/store";
+  const last = store.get<string | null>("last", null);
+  if (last) {
+    const base = document.body.dataset.base!;
+    fetch(base + "topics.json").then((r) => r.json()).then((list: any[]) => {
+      const e = list.find((x) => x.s === last); if (!e) return;
+      const total = list[list.length - 1].end;
+      const set = (id: string, v: string) => { document.getElementById(id)!.textContent = v; };
+      (document.getElementById("cont") as HTMLAnchorElement).href = base + "h/" + e.s + "/";
+      set("cont-k", "อ่านต่อจากที่ค้างไว้"); set("cont-l", "หะดีษที่ " + e.l); set("cont-t", e.b + " · " + e.t);
+      set("cont-m", e.k + " · หะดีษ " + e.end + " จาก " + total);
+      document.getElementById("cont-p")!.style.width = Math.round(e.end / total * 100) + "%";
+    }).catch(() => {});
+  }
+</script>

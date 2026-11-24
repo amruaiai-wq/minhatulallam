@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/data";
+import { ICON } from "../lib/icons";
+const FILTERS = [["all", "ทั้งหมด"], ["ar", "ตัวบทอาหรับ"], ["rul", "ข้อตัดสิน"], ["tag", "หัวข้อ"]];
+---
+<Base title="ค้นหา" tab="search">
+  <div class="view">
+    <form class="sbar" id="sf" role="search">
+      <a class="icon-btn" href={url()} aria-label="กลับหน้าแรก" set:html={ICON.back} />
+      <label class="searchbox"><Fragment set:html={ICON.search} /><span style="position:absolute;width:1px;height:1px;overflow:hidden">ค้นหา</span>
+        <input id="sq" name="q" type="search" placeholder="คำไทย อาหรับ หรือเลขหะดีษ" autocomplete="off" /></label>
+    </form>
+    <div class="pad" style="padding-block:16px;display:flex;flex-direction:column;gap:16px">
+      <div class="filters" role="group" aria-label="ตัวกรอง">
+        {FILTERS.map(([id, t], i) => <button type="button" data-f={id} aria-pressed={i === 0 ? "true" : "false"}>{t}</button>)}
+      </div>
+      <div id="count" class="muted" style="font-size:13px">กำลังโหลดดัชนี…</div>
+      <div id="results" style="display:flex;flex-direction:column;gap:12px"></div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  type Item = { s: string; l: string; k: string; b: string; t: string; m: string; no: number[]; r: string[]; g: string; a: string; t2: string; x?: string };
+  const base = document.body.dataset.base!;
+  const strip = (s: string) => s.replace(/[ً-ٰٟ]/g, "");
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]!));
+  const params = new URLSearchParams(location.search);
+  const input = document.getElementById("sq") as HTMLInputElement;
+  input.value = params.get("q") || "";
+  let filter = params.get("f") || "all";
+  const btns = document.querySelectorAll<HTMLButtonElement>("[data-f]");
+  const paintF = () => btns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.f === filter)));
+  paintF();
+  let items: Item[] = [];
+  const hay = (e: Item) => filter === "ar" ? e.a : filter === "rul" ? e.r.join(" ").toLowerCase() : filter === "tag" ? e.g.toLowerCase()
+    : [e.a, e.r.join(" ").toLowerCase(), e.g.toLowerCase(), e.t2, e.x || ""].join(" ");
+  let fullState = 0; // 0 not loaded, 1 loading, 2 loaded
+  function needFull() {
+    if (fullState) return; fullState = 1;
+    fetch(base + "search-text.json").then((r) => r.json()).then((xs: string[]) => { xs.forEach((x, i) => { if (items[i]) items[i].x = x; }); fullState = 2; run(); }).catch(() => { fullState = 0; });
+  }
+  function run() {
+    const query = input.value.trim(), q = strip(query.toLowerCase());
+    const u = new URL(location.href); u.searchParams.set("q", query); u.searchParams.set("f", filter); history.replaceState(null, "", u);
+    const list = !q ? items : /^\d+$/.test(q) ? items.filter((e) => e.no.includes(+q)) : items.filter((e) => hay(e).includes(q));
+    if (q && filter === "all" && !/^\d+$/.test(q)) needFull();
+    const more = q && filter === "all" && fullState === 1 ? " · กำลังค้นในคำอธิบายเพิ่ม…" : "";
+    document.getElementById("count")!.textContent = (q ? `พบ ${list.length} หัวข้อ` : `ทุกหัวข้อที่สรุปแล้ว (${list.length})`) + more;
+    const hl = (s: string) => { if (!q || /^\d+$/.test(q)) return esc(s); const i = s.toLowerCase().indexOf(q); return i < 0 ? esc(s) : esc(s.slice(0, i)) + "<mark>" + esc(s.slice(i, i + q.length)) + "</mark>" + esc(s.slice(i + q.length)); };
+    const shown = list.slice(0, 200);
+    document.getElementById("results")!.innerHTML = list.length ? shown.map((e) => {
+      const line = e.r.find((r) => q && r.toLowerCase().includes(q)) || e.t;
+      return `<a class="card result" href="${base}h/${e.s}/"><div class="meta"><span>${esc(e.k)} › ${esc(e.b)}</span><b>หะดีษที่ ${e.l}</b></div>`
+        + `<div class="ar" lang="ar">${esc(e.m)}</div><div style="font-size:15px;line-height:1.6">${hl(line)}</div></a>`;
+    }).join("") + (list.length > shown.length ? `<div class="empty">แสดง ${shown.length} จาก ${list.length} หัวข้อ — พิมพ์คำให้เจาะจงขึ้น</div>` : "")
+      : `<div class="empty">ไม่พบหะดีษที่ตรงกับ "${esc(query)}"<br>ลองคำอื่น หรือพิมพ์เลขหะดีษ</div>`;
+  }
+  btns.forEach((b) => b.addEventListener("click", () => { filter = b.dataset.f!; paintF(); run(); }));
+  input.addEventListener("input", run);
+  document.getElementById("sf")!.addEventListener("submit", (ev) => { ev.preventDefault(); input.blur(); });
+  fetch(base + "search.json").then((r) => r.json()).then((d) => { items = d; run(); })
+    .catch(() => { document.getElementById("count")!.textContent = "โหลดดัชนีค้นหาไม่สำเร็จ"; });
+</script>

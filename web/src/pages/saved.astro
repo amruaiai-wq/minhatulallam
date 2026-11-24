@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../lib/data";
+import { ICON } from "../lib/icons";
+---
+<Base title="บุ๊กมาร์ก" tab="saved">
+  <div class="view">
+    <div class="topbar"><a class="icon-btn" href={url()} aria-label="กลับหน้าแรก" set:html={ICON.back} /><div class="t"><small>เก็บไว้ในเครื่องนี้</small><b>บุ๊กมาร์ก</b></div></div>
+    <div class="pad" id="list" style="padding-block:16px;display:flex;flex-direction:column;gap:12px"></div>
+  </div>
+</Base>
+
+<script>
+  import { store } from "../lib/store";
+  const base = document.body.dataset.base!, box = document.getElementById("list")!;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]!));
+  const empty = '<div class="empty">ยังไม่มีบุ๊กมาร์ก<br>กดไอคอนบุ๊กมาร์กที่มุมขวาบนของหน้าหะดีษเพื่อเก็บไว้อ่านทีหลัง</div>';
+  const sv = store.get<string[]>("saved", []);
+  if (!sv.length) box.innerHTML = empty;
+  else fetch(base + "topics.json").then((r) => r.json()).then((all: any[]) => {
+    const list = all.filter((e) => sv.includes(e.s));
+    box.innerHTML = list.length ? list.map((e) => `<a class="card result" href="${base}h/${e.s}/"><div class="meta"><span>${esc(e.b)}</span><b>หะดีษที่ ${e.l}</b></div><div style="font-size:16px;font-weight:600">${esc(e.t)}</div></a>`).join("") : empty;
+  });
+</script>
