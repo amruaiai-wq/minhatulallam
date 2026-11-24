@@ -30,8 +30,8 @@ for (const v of vols) {
 }
 entries.sort((a, b) => a.hadith[0].no - b.hadith[0].no);
 
-export const KNAME: Record<string, string> = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์", siyam: "กิตาบอัศศิยาม", hajj: "กิตาบอัลหัจญ์", buyu: "กิตาบอัลบุยูอ์", nikah: "กิตาบอันนิกาห์", talaq: "กิตาบอัฏเฏาะลาก", jinayat: "กิตาบอัลญินายาต", hudud: "กิตาบอัลหุดูด" };
-export const KSHORT: Record<string, string> = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์", siyam: "อัศศิยาม", hajj: "อัลหัจญ์", buyu: "อัลบุยูอ์", nikah: "อันนิกาห์", talaq: "อัฏเฏาะลาก", jinayat: "อัลญินายาต", hudud: "อัลหุดูด" };
+export const KNAME: Record<string, string> = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์", siyam: "กิตาบอัศศิยาม", hajj: "กิตาบอัลหัจญ์", buyu: "กิตาบอัลบุยูอ์", nikah: "กิตาบอันนิกาห์", talaq: "กิตาบอัฏเฏาะลาก", jinayat: "กิตาบอัลญินายาต", hudud: "กิตาบอัลหุดูด", jihad: "กิตาบอัลญิฮาด", atimah: "กิตาบอัลอัฏอิมะฮ์", ayman: "กิตาบอัลอัยมานวันนุซูร", qada: "กิตาบอัลเกาะฎออ์", itq: "กิตาบอัลอิตก์" };
+export const KSHORT: Record<string, string> = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์", siyam: "อัศศิยาม", hajj: "อัลหัจญ์", buyu: "อัลบุยูอ์", nikah: "อันนิกาห์", talaq: "อัฏเฏาะลาก", jinayat: "อัลญินายาต", hudud: "อัลหุดูด", jihad: "อัลญิฮาด", atimah: "อัลอัฏอิมะฮ์", ayman: "อัลอัยมาน", qada: "อัลเกาะฎออ์", itq: "อัลอิตก์" };
 
 const babById = new Map(babs.map((b) => [b.volume + ":" + b.id, b]));
 export const babOf = (e: Entry) => babById.get(e.volume + ":" + e.bab)!;
@@ -55,11 +55,11 @@ export const KITABS = [
   { ar: "كتاب الطلاق", th: "การหย่า", ids: ["talaq"] },
   { ar: "كتاب الجنايات", th: "อาชญากรรมต่อชีวิต", ids: ["jinayat"] },
   { ar: "كتاب الحدود", th: "บทลงโทษหัดด์", ids: ["hudud"] },
-  { ar: "كتاب الجهاد", th: "ญิฮาด" },
-  { ar: "كتاب الأطعمة", th: "อาหาร" },
-  { ar: "كتاب الأيمان والنذور", th: "การสาบานและการบนบาน" },
-  { ar: "كتاب القضاء", th: "การตัดสินคดี" },
-  { ar: "كتاب العتق", th: "การปลดปล่อยทาส" },
+  { ar: "كتاب الجهاد", th: "ญิฮาด", ids: ["jihad"] },
+  { ar: "كتاب الأطعمة", th: "อาหาร", ids: ["atimah"] },
+  { ar: "كتاب الأيمان والنذور", th: "การสาบานและการบนบาน", ids: ["ayman"] },
+  { ar: "كتاب القضاء", th: "การตัดสินคดี", ids: ["qada"] },
+  { ar: "كتاب العتق", th: "การปลดปล่อยทาส", ids: ["itq"] },
   { ar: "كتاب الجامع", th: "รวมเรื่องมารยาท" },
 ].map((k: { ar: string; th: string; ids?: string[] }) => {
   if (!k.ids) return { ...k, ready: false, done: 0, total: 0 };

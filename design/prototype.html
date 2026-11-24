@@ -184,8 +184,8 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
   var babs = D.toc.babs, entries = D.entries;
   var babById = {}; babs.forEach(function (b) { babById[(b.volume || 1) + ":" + b.id] = b; });
   var babOf = function (e) { return babById[(e.volume || 1) + ":" + e.bab]; };
-  var KNAME = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์", siyam: "กิตาบอัศศิยาม", hajj: "กิตาบอัลหัจญ์", buyu: "กิตาบอัลบุยูอ์", nikah: "กิตาบอันนิกาห์", talaq: "กิตาบอัฏเฏาะลาก", jinayat: "กิตาบอัลญินายาต", hudud: "กิตาบอัลหุดูด" };
-  var KSHORT = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์", siyam: "อัศศิยาม", hajj: "อัลหัจญ์", buyu: "อัลบุยูอ์", nikah: "อันนิกาห์", talaq: "อัฏเฏาะลาก", jinayat: "อัลญินายาต", hudud: "อัลหุดูด" };
+  var KNAME = { taharah: "กิตาบฏอฮาเราะฮ์", hayd: "กิตาบอัลหัยฎ์", salah: "กิตาบอัศเศาะลาฮ์", janaiz: "กิตาบอัลญะนาอิซ", zakah: "กิตาบอัซซะกาฮ์", siyam: "กิตาบอัศศิยาม", hajj: "กิตาบอัลหัจญ์", buyu: "กิตาบอัลบุยูอ์", nikah: "กิตาบอันนิกาห์", talaq: "กิตาบอัฏเฏาะลาก", jinayat: "กิตาบอัลญินายาต", hudud: "กิตาบอัลหุดูด", jihad: "กิตาบอัลญิฮาด", atimah: "กิตาบอัลอัฏอิมะฮ์", ayman: "กิตาบอัลอัยมานวันนุซูร", qada: "กิตาบอัลเกาะฎออ์", itq: "กิตาบอัลอิตก์" };
+  var KSHORT = { taharah: "ฏอฮาเราะฮ์", hayd: "อัลหัยฎ์", salah: "อัศเศาะลาฮ์", janaiz: "อัลญะนาอิซ", zakah: "อัซซะกาฮ์", siyam: "อัศศิยาม", hajj: "อัลหัจญ์", buyu: "อัลบุยูอ์", nikah: "อันนิกาห์", talaq: "อัฏเฏาะลาก", jinayat: "อัลญินายาต", hudud: "อัลหุดูด", jihad: "อัลญิฮาด", atimah: "อัลอัฏอิมะฮ์", ayman: "อัลอัยมาน", qada: "อัลเกาะฎออ์", itq: "อัลอิตก์" };
   var kitabOf = function (b) { return b.kitab || "taharah"; };
   var volOf = function (e) { return e.volume || 1; };
   var KITABS = [
@@ -200,11 +200,11 @@ mark { background: var(--gold-soft); color: inherit; padding: 0 2px; border-radi
     { ar: "كتاب الطلاق", th: "การหย่า", ids: ["talaq"] },
     { ar: "كتاب الجنايات", th: "อาชญากรรมต่อชีวิต", ids: ["jinayat"] },
     { ar: "كتاب الحدود", th: "บทลงโทษหัดด์", ids: ["hudud"] },
-    { ar: "كتاب الجهاد", th: "ญิฮาด" },
-    { ar: "كتاب الأطعمة", th: "อาหาร" },
-    { ar: "كتاب الأيمان والنذور", th: "การสาบานและการบนบาน" },
-    { ar: "كتاب القضاء", th: "การตัดสินคดี" },
-    { ar: "كتاب العتق", th: "การปลดปล่อยทาส" },
+    { ar: "كتاب الجهاد", th: "ญิฮาด", ids: ["jihad"] },
+    { ar: "كتاب الأطعمة", th: "อาหาร", ids: ["atimah"] },
+    { ar: "كتاب الأيمان والنذور", th: "การสาบานและการบนบาน", ids: ["ayman"] },
+    { ar: "كتاب القضاء", th: "การตัดสินคดี", ids: ["qada"] },
+    { ar: "كتاب العتق", th: "การปลดปล่อยทาส", ids: ["itq"] },
     { ar: "كتاب الجامع", th: "รวมเรื่องมารยาท" }
   ];
   var kitabIntros = D.toc.kitab_intros || [];
