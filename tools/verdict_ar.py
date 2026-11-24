@@ -16,9 +16,13 @@ for f, pre, ar in A:
         n = s.count('ผู้แต่ง: ' + pre)
         s = s.replace('ผู้แต่ง: ' + pre, 'ผู้แต่ง: «' + ar + '» ' + pre)
     else:
-        old = 'ผู้แต่งว่า' + pre
-        n = s.count(old)
-        s = s.replace(old, 'ผู้แต่ง: «' + ar + '» ' + pre)
+        n = 0
+        for lead in ('ผู้แต่งเห็นว่า', 'ผู้แต่งสรุปว่า', 'ผู้แต่งว่า', ''):
+            old = lead + pre
+            if lead == '' and n == 0 and s.count(old) == 1:
+                n = 1; s = s.replace(old, 'ผู้แต่ง: «' + ar + '» ' + pre); break
+            if lead and s.count(old):
+                n = s.count(old); s = s.replace(old, 'ผู้แต่ง: «' + ar + '» ' + pre); break
     if n == 0: print('MISS', f, pre); bad += 1; continue
     jsonio.save(f, json.loads(s), fmt)
 print('done, misses:', bad)
