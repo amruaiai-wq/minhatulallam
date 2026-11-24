@@ -12,6 +12,9 @@ for f, pre, ar in A:
     n = len(pat.findall(s))
     if n:
         s = pat.sub(lambda m: 'ผู้แต่ง: «' + ar + '» ' + m.group(1), s)
+    elif ('ผู้แต่ง: ' + pre) in s:
+        n = s.count('ผู้แต่ง: ' + pre)
+        s = s.replace('ผู้แต่ง: ' + pre, 'ผู้แต่ง: «' + ar + '» ' + pre)
     else:
         old = 'ผู้แต่งว่า' + pre
         n = s.count(old)
