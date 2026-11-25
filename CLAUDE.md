@@ -52,7 +52,7 @@ Thai summary website of **منحة العلام في شرح بلوغ المرا�
   Kitab title pages are approximate until each kitab is read. The index prints 339 for «من نذر الصلاة في المكان المفضول…»
   (must be 393–402; 396 provisional). Write entries with `tools/w9.py BATCH.py`, validate with `fin4.py 9 1266`.
   The prototype and web KITABS lists now have ids jihad / atimah / ayman / qada / itq.
-  Done: كتاب الجهاد kitab intro (pp. 5–7, on the `jihad` entry in `kitabs`); bab `jihad` hadith 1266–1281 (pages 8–52).
+  Done: كتاب الجهاد kitab intro (pp. 5–7, on the `jihad` entry in `kitabs`); all the kitab's own topics complete (bab `jihad`, hadith 1266–1314, pages 8–127); باب الجزية والهدنة intro (pp. 128–129). Vol 9 entries are denser than vols 1–8 (avg ~2700 section chars/topic vs 2800–4200) — fine, the jihad topics are short in the book.
 - When the author comments before «الكلام عليه من وجوه», fold it into the most related wajh
   (no wajh 0).
 - toc.json headings were drafted before reading; when the scan's heading differs, the scan
