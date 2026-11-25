@@ -5,7 +5,7 @@
   1266,
   1446
  ],
- "note": "Built from the book's فهرس الموضوعات (pp. 607–614). The index prints 339 for «من نذر الصلاة في المكان المفضول…»; it must fall between 393 and 402 (provisional 396, fix from the scan). Kitab pages are the title pages; check when each kitab is summarized.",
+ "note": "Built from the book's فهرس الموضوعات (pp. 607–614). The index prints 339 for «من نذر الصلاة في المكان المفضول…»; the scan shows it starts on p. 399 (used). Kitab pages are the title pages; check when each kitab is summarized.",
  "kitabs": [
   {
    "id": "jihad",
@@ -1004,19 +1004,26 @@
      "ar": "ما جاء في قضاء نذر الميت",
      "th": "การชดใช้การบนบานแทนผู้ตาย",
      "page": 389,
-     "hadith_nos": []
+     "hadith_nos": [
+      1386
+     ]
     },
     {
      "ar": "جواز تخصيص النذر بمكان معين إذا خلا من الموانع الشرعية",
      "th": "การบนบานเจาะจงสถานที่ได้เมื่อไม่มีข้อห้ามทางศาสนา",
      "page": 393,
-     "hadith_nos": []
+     "hadith_nos": [
+      1387,
+      1388
+     ]
     },
     {
      "ar": "من نذر الصلاة في المكان المفضول جاز أن يصلي في الفاضل",
      "th": "ผู้บนว่าจะละหมาดในที่ด้อยกว่า ละหมาดในที่ประเสริฐกว่าได้",
-     "page": 396,
-     "hadith_nos": []
+     "page": 399,
+     "hadith_nos": [
+      1389
+     ]
     },
     {
      "ar": "جواز شد الرحل للمساجد الثلاثة وفاء بالنذر",
